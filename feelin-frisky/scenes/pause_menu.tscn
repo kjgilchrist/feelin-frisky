@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2suvgtg5teij"]
+[gd_scene load_steps=3 format=3 uid="uid://b2suvgtg5teij"]
 
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_vwlrr"]
+[ext_resource type="PackedScene" uid="uid://bt61gwl7sqavx" path="res://scenes/settings_menu.tscn" id="2_yr55i"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -51,5 +52,9 @@ text = "Settings"
 layout_mode = 2
 text = "Quit"
 
+[node name="SettingsMenu" parent="." instance=ExtResource("2_yr55i")]
+visible = false
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ResumeBtn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/SettingsBtn" to="." method="_on_settings_btn_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/QuitBtn" to="." method="_on_quit_btn_pressed"]

@@ -1,9 +1,11 @@
 extends Control
 
 var is_paused: set = _set_is_paused, get = _get_is_paused
+@onready var main_menu = get_tree().get_root().get_node("World/GUI/MainMenu")
+@onready var settings_menu = $SettingsMenu
 
 func _input(event):
-	if event.is_action_pressed("pause"):
+	if event.is_action_pressed("pause") and !main_menu.visible:
 		self.is_paused = !is_paused
 	
 
@@ -24,3 +26,7 @@ func _on_resume_btn_pressed():
 func _on_quit_btn_pressed():
 	get_tree().get_root().propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
 	get_tree().quit()
+
+
+func _on_settings_btn_pressed():
+	settings_menu.popup_centered()

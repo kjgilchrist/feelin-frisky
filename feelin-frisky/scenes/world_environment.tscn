@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ftmc72w5pu2v"]
+
+[ext_resource type="Script" path="res://scripts/world_environment.gd" id="1_568vs"]
+
+[sub_resource type="Environment" id="Environment_cw74p"]
+adjustment_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment"]
+environment = SubResource("Environment_cw74p")
+script = ExtResource("1_568vs")
