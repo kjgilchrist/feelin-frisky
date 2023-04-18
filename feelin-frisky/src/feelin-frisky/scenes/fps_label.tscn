@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cfva8524bo3ni"]
 
-[ext_resource type="Script" path="res://scripts/fps_label.gd" id="1_mrlyd"]
+[ext_resource type="Script" path="res://src/feelin-frisky/scripts/fps_label.gd" id="1_g68vv"]
 
 [node name="FPSLabel" type="Label"]
 visible = false
@@ -10,4 +10,4 @@ offset_bottom = 23.0
 text = "FPS: 60"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("1_mrlyd")
+script = ExtResource("1_g68vv")

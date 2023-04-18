@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b2suvgtg5teij"]
 
-[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_vwlrr"]
-[ext_resource type="PackedScene" uid="uid://bt61gwl7sqavx" path="res://scenes/settings_menu.tscn" id="2_yr55i"]
+[ext_resource type="Script" path="res://src/feelin-frisky/scripts/pause_menu.gd" id="1_n82xb"]
+[ext_resource type="PackedScene" uid="uid://bt61gwl7sqavx" path="res://src/feelin-frisky/scenes/settings_menu.tscn" id="2_yr55i"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -12,7 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_vwlrr")
+script = ExtResource("1_n82xb")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1

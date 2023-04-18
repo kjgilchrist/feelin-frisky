@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="Feelin-frisky"
-run/main_scene="res://scenes/world.tscn"
+run/main_scene="res://src/feelin-frisky/scenes/world.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
-config/icon="res://assets/icon.svg"
+config/icon="res://src/feelin-frisky/assets/icon.svg"
+
+[audio]
+
+buses/default_bus_layout="res://src/feelin-frisky/audio/default_bus_layout.tres"
 
 [autoload]
 
-GlobalSettings="*res://scripts/global_settings.gd"
+GlobalSettings="*res://src/feelin-frisky/scripts/global_settings.gd"
 
 [display]
 
