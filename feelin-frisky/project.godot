@@ -13,7 +13,7 @@ config_version=5
 config/name="Feelin-frisky"
 run/main_scene="res://src/feelin-frisky/scenes/world.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
-config/icon="res://src/feelin-frisky/assets/icon.svg"
+config/icon="res://src/feelin-frisky/art/icon.svg"
 
 [audio]
 
