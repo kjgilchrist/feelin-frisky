@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://5ddrs6tdayqh"]
+[gd_scene load_steps=3 format=3 uid="uid://sxw3wekysiad"]
 
 [ext_resource type="Script" path="res://src/feelin-frisky/scripts/main_menu.gd" id="1_dotrf"]
-[ext_resource type="PackedScene" uid="uid://bt61gwl7sqavx" path="res://src/feelin-frisky/scenes/settings_menu.tscn" id="2_gibed"]
+[ext_resource type="PackedScene" path="res://src/feelin-frisky/scenes/settings_menu.tscn" id="2_gibed"]
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
@@ -54,5 +54,6 @@ text = "Quit"
 [node name="SettingsMenu" parent="." instance=ExtResource("2_gibed")]
 visible = false
 
+[connection signal="pressed" from="CenterContainer/VBoxContainer/StartBtn" to="." method="_on_start_btn_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/SettingsBtn" to="." method="_on_settings_btn_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/QuitBtn" to="." method="_on_quit_btn_pressed"]

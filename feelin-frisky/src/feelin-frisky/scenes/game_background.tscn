@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://blywf6ixdc816"]
+
+[ext_resource type="Texture2D" uid="uid://be4pcried6df0" path="res://src/feelin-frisky/art/Front.png" id="1_yaxos"]
+[ext_resource type="Texture2D" uid="uid://ttvhlx2mp0qb" path="res://src/feelin-frisky/art/Back.png" id="2_aq4kl"]
+
+[node name="GameBackground" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/HSplitContainer"]
+custom_minimum_size = Vector2(289, 650)
+layout_mode = 2
+texture = ExtResource("1_yaxos")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="CenterContainer/HSplitContainer"]
+custom_minimum_size = Vector2(289, 650)
+layout_mode = 2
+texture = ExtResource("2_aq4kl")
+expand_mode = 1

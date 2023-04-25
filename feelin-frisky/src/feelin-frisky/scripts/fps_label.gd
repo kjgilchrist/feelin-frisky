@@ -3,7 +3,6 @@ extends Label
 
 func _ready():
 	GlobalSettings.connect("fps_displayed", _on_fps_displayed)
-	
 
 
 func _process(_delta):

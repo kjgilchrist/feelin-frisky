@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2suvgtg5teij"]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://src/feelin-frisky/scripts/pause_menu.gd" id="1_n82xb"]
-[ext_resource type="PackedScene" uid="uid://bt61gwl7sqavx" path="res://src/feelin-frisky/scenes/settings_menu.tscn" id="2_yr55i"]
+[ext_resource type="PackedScene" path="res://src/feelin-frisky/scenes/settings_menu.tscn" id="2_yr55i"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3

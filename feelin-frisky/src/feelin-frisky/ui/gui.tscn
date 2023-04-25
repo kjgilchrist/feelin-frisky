@@ -1,12 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmbfvtsqjkxdb"]
+[gd_scene load_steps=6 format=3 uid="uid://0kuembofp0lm"]
 
-[ext_resource type="PackedScene" uid="uid://b2suvgtg5teij" path="res://scenes/pause_menu.tscn" id="1_06gu5"]
-[ext_resource type="PackedScene" uid="uid://5ddrs6tdayqh" path="res://scenes/main_menu.tscn" id="1_skvb4"]
-[ext_resource type="PackedScene" uid="uid://cfva8524bo3ni" path="res://scenes/fps_label.tscn" id="3_g03pe"]
+[ext_resource type="PackedScene" path="res://src/feelin-frisky/scenes/pause_menu.tscn" id="1_06gu5"]
+[ext_resource type="PackedScene" path="res://src/feelin-frisky/scenes/main_menu.tscn" id="1_skvb4"]
+[ext_resource type="PackedScene" uid="uid://cfva8524bo3ni" path="res://src/feelin-frisky/scenes/fps_label.tscn" id="3_g03pe"]
+[ext_resource type="PackedScene" uid="uid://blywf6ixdc816" path="res://src/feelin-frisky/scenes/game_background.tscn" id="4_qvui6"]
+[ext_resource type="Script" path="res://src/feelin-frisky/scripts/game_background.gd" id="4_w5so3"]
 
 [node name="GUI" type="CanvasLayer"]
 
 [node name="MainMenu" parent="." instance=ExtResource("1_skvb4")]
+
+[node name="GameBackground" parent="." instance=ExtResource("4_qvui6")]
+visible = false
+script = ExtResource("4_w5so3")
 
 [node name="PauseMenu" parent="." instance=ExtResource("1_06gu5")]
 
