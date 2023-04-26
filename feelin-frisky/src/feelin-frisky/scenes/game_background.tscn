@@ -11,16 +11,29 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.992188, 1)
 color = Color(0, 0, 0, 1)
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="TitleLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 35
+text = "Feelin' Frisky"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Center" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,18 +41,83 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HSplitContainer" type="HSplitContainer" parent="CenterContainer"]
+[node name="MainGrid" type="GridContainer" parent="Center"]
 layout_mode = 2
-dragger_visibility = 2
+columns = 3
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/HSplitContainer"]
-custom_minimum_size = Vector2(289, 650)
+[node name="FrontFigure" type="TextureRect" parent="Center/MainGrid"]
+custom_minimum_size = Vector2(332, 550)
 layout_mode = 2
 texture = ExtResource("1_yaxos")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="CenterContainer/HSplitContainer"]
-custom_minimum_size = Vector2(289, 650)
+[node name="Center" type="CenterContainer" parent="Center/MainGrid"]
+custom_minimum_size = Vector2(332, 550)
+layout_mode = 2
+
+[node name="TextGrid" type="GridContainer" parent="Center/MainGrid/Center"]
+layout_mode = 2
+theme_override_constants/v_separation = 15
+
+[node name="StatusLabel" type="Label" parent="Center/MainGrid/Center/TextGrid"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "CURRENT STATUS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FriskLabel" type="Label" parent="Center/MainGrid/Center/TextGrid"]
+layout_mode = 2
+text = "Frisks Complete: 0"
+
+[node name="ItemLabel" type="Label" parent="Center/MainGrid/Center/TextGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "Items Confiscated: 0"
+vertical_alignment = 1
+
+[node name="CasualtyLabel" type="Label" parent="Center/MainGrid/Center/TextGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Casualties: 0"
+vertical_alignment = 1
+
+[node name="EmployLabel" type="Label" parent="Center/MainGrid/Center/TextGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Job: Probationary"
+vertical_alignment = 1
+
+[node name="BackFigure" type="TextureRect" parent="Center/MainGrid"]
+custom_minimum_size = Vector2(332, 550)
 layout_mode = 2
 texture = ExtResource("2_aq4kl")
 expand_mode = 1
+
+[node name="FrontLabel" type="Label" parent="Center/MainGrid"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "FRONT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimerContainer" type="GridContainer" parent="Center/MainGrid"]
+layout_mode = 2
+columns = 2
+
+[node name="TimerFigure" type="TextureRect" parent="Center/MainGrid/TimerContainer"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+
+[node name="TimerVisual" type="ColorRect" parent="Center/MainGrid/TimerContainer"]
+custom_minimum_size = Vector2(300, 25)
+layout_mode = 2
+
+[node name="BackLabel" type="Label" parent="Center/MainGrid"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "BACK"
+horizontal_alignment = 1
+vertical_alignment = 1
