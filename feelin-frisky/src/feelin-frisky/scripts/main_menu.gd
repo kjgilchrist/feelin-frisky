@@ -1,7 +1,7 @@
 extends Control
 
 @onready var settings_menu = $SettingsMenu
-signal _game_start
+signal game_start
 
 
 func _on_quit_btn_pressed():
@@ -15,4 +15,4 @@ func _on_settings_btn_pressed():
 
 func _on_start_btn_pressed():
 	visible = false
-	emit_signal("_game_start")
+	emit_signal("game_start")

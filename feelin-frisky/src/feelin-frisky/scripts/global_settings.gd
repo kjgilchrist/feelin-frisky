@@ -1,7 +1,33 @@
 extends Node
 
+@onready var main_menu= get_tree().get_root().get_node("World/GUI/MainMenu")
 signal fps_displayed(value)
 signal brightness_updated(value)
+signal update_frisks(value)
+signal update_items(value)
+signal update_casualties(value)
+signal update_job(string)
+# Best Stats
+var max_frisks
+var max_items
+var min_casualties
+var best_job_status
+
+
+func _ready():
+	main_menu.connect("game_start", _on_game_start)
+
+
+func _on_game_start():
+	# frisks = 0
+	emit_signal("update_frisks", 0)
+	# items = 0
+	emit_signal("update_items", 0)
+	# casualties = 0
+	emit_signal("update_casualties", 0)
+	# job_status = "Probationary"
+	emit_signal("update_job", "Probationary")
+
 
 func toggle_fullscreen(value):
 	# 0 - Windowed, 3 - Fullscreen
