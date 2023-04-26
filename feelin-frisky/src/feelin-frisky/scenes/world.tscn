@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b2ty4ew1cw6or"]
 
-[ext_resource type="PackedScene" path="res://src/feelin-frisky/ui/gui.tscn" id="1_o37jt"]
+[ext_resource type="PackedScene" uid="uid://0kuembofp0lm" path="res://src/feelin-frisky/ui/gui.tscn" id="1_o37jt"]
 [ext_resource type="PackedScene" uid="uid://ftmc72w5pu2v" path="res://src/feelin-frisky/scenes/world_environment.tscn" id="2_injbn"]
 
 [node name="World" type="Node2D"]

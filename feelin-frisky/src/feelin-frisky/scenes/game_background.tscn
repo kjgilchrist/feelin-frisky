@@ -30,6 +30,7 @@ grow_vertical = 2
 
 [node name="HSplitContainer" type="HSplitContainer" parent="CenterContainer"]
 layout_mode = 2
+dragger_visibility = 2
 
 [node name="TextureRect" type="TextureRect" parent="CenterContainer/HSplitContainer"]
 custom_minimum_size = Vector2(289, 650)
