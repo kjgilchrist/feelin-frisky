@@ -32,17 +32,20 @@ void setup() {
 }
 
 void loop() {
-  for (int i = 0; i < NUM_PINS; i++) {
-    sensorCheck(i);
-  }
-  // int sensor1 = analogRead(A1);
-  // int sensor2 = analogRead(A2);
-  // int sensor3 = analogRead(A3);
-  // Serial.print(sensor1);
-  // Serial.print(", ");d
-  // Serial.print(sensor2);
-  // Serial.print(", ");
-  // Serial.print(sensor3);
+  // for (int i = 0; i < NUM_PINS; i++) {
+  //   sensorCheck(i);
+  // }
+  int sensor1 = analogRead(A1);
+  int sensor2 = analogRead(A2);
+  int sensor3 = analogRead(A3);
+  int sensor4 = analogRead(A4);
+  Serial.print(sensor1);
+  Serial.print(", ");
+  Serial.print(sensor2);
+  Serial.print(", ");
+  Serial.print(sensor3);
+  Serial.print(", ");
+  Serial.print(sensor4);
   Serial.println();
 }
 

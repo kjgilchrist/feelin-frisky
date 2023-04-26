@@ -1,10 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2ty4ew1cw6or"]
+[gd_scene load_steps=4 format=3 uid="uid://b2ty4ew1cw6or"]
 
 [ext_resource type="PackedScene" uid="uid://0kuembofp0lm" path="res://src/feelin-frisky/ui/gui.tscn" id="1_o37jt"]
+[ext_resource type="Script" path="res://src/feelin-frisky/scripts/world.gd" id="1_x70vh"]
 [ext_resource type="PackedScene" uid="uid://ftmc72w5pu2v" path="res://src/feelin-frisky/scenes/world_environment.tscn" id="2_injbn"]
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_x70vh")
 
 [node name="GUI" parent="." instance=ExtResource("1_o37jt")]
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("2_injbn")]
+
+[node name="ScanTimer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+
+[connection signal="timeout" from="ScanTimer" to="." method="_on_scan_timer_timeout"]

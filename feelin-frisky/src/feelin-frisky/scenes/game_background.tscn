@@ -59,34 +59,34 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Right_Forearm" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations"]
+[node name="Right_Forearm" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations" groups=["SpawnLocations"]]
 position = Vector2(112, 247)
 
-[node name="Right_Breast" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations"]
+[node name="Right_Breast" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations" groups=["SpawnLocations"]]
 position = Vector2(153, 182)
 
-[node name="Right_Pocket" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations"]
+[node name="Right_Pocket" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations" groups=["SpawnLocations"]]
 position = Vector2(141, 254)
 
-[node name="Right_Foot" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations"]
+[node name="Right_Foot" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations" groups=["SpawnLocations"]]
 position = Vector2(151, 450)
 
-[node name="Stomach" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations"]
+[node name="Stomach" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations" groups=["SpawnLocations"]]
 position = Vector2(165, 225)
 
-[node name="Crotch" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations"]
+[node name="Crotch" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations" groups=["SpawnLocations"]]
 position = Vector2(166, 265)
 
-[node name="Left_Forearm" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations"]
+[node name="Left_Forearm" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations" groups=["SpawnLocations"]]
 position = Vector2(221, 249)
 
-[node name="Left_Breast" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations"]
+[node name="Left_Breast" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations" groups=["SpawnLocations"]]
 position = Vector2(180, 182)
 
-[node name="Left_Pocket" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations"]
+[node name="Left_Pocket" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations" groups=["SpawnLocations"]]
 position = Vector2(191, 253)
 
-[node name="Left_Foot" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations"]
+[node name="Left_Foot" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations" groups=["SpawnLocations"]]
 position = Vector2(181, 449)
 
 [node name="TextCenter" type="CenterContainer" parent="Center/MainGrid"]
@@ -107,24 +107,27 @@ vertical_alignment = 1
 
 [node name="FriskLabel" type="Label" parent="Center/MainGrid/TextCenter/TextGrid"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "Frisks Complete: #"
 
 [node name="ItemLabel" type="Label" parent="Center/MainGrid/TextCenter/TextGrid"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 16
 text = "Items Confiscated: #"
 vertical_alignment = 1
 
 [node name="CasualtyLabel" type="Label" parent="Center/MainGrid/TextCenter/TextGrid"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 16
 text = "Casualties: #"
 vertical_alignment = 1
 
 [node name="EmployLabel" type="Label" parent="Center/MainGrid/TextCenter/TextGrid"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
 text = "Job: Unknown"
 vertical_alignment = 1
 
@@ -142,22 +145,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Right_Armpit" type="Node2D" parent="Center/MainGrid/BackFigure/BackLocations"]
+[node name="Left_Armpit" type="Node2D" parent="Center/MainGrid/BackFigure/BackLocations" groups=["SpawnLocations"]]
 position = Vector2(132, 169)
 
-[node name="Right_Butt" type="Node2D" parent="Center/MainGrid/BackFigure/BackLocations"]
+[node name="Left_Butt" type="Node2D" parent="Center/MainGrid/BackFigure/BackLocations" groups=["SpawnLocations"]]
 position = Vector2(147, 265)
 
-[node name="Right_Thigh" type="Node2D" parent="Center/MainGrid/BackFigure/BackLocations"]
+[node name="Left_Thigh" type="Node2D" parent="Center/MainGrid/BackFigure/BackLocations" groups=["SpawnLocations"]]
 position = Vector2(157, 304)
 
-[node name="Left_Armpit" type="Node2D" parent="Center/MainGrid/BackFigure/BackLocations"]
+[node name="Right_Armpit" type="Node2D" parent="Center/MainGrid/BackFigure/BackLocations" groups=["SpawnLocations"]]
 position = Vector2(199, 167)
 
-[node name="Left_Butt" type="Node2D" parent="Center/MainGrid/BackFigure/BackLocations"]
+[node name="Right_Butt" type="Node2D" parent="Center/MainGrid/BackFigure/BackLocations" groups=["SpawnLocations"]]
 position = Vector2(186, 264)
 
-[node name="Left_Thigh" type="Node2D" parent="Center/MainGrid/BackFigure/BackLocations"]
+[node name="Right_Thigh" type="Node2D" parent="Center/MainGrid/BackFigure/BackLocations" groups=["SpawnLocations"]]
 position = Vector2(178, 304)
 
 [node name="FrontLabel" type="Label" parent="Center/MainGrid"]
