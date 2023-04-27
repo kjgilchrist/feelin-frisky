@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var item_scene = preload("res://src/feelin-frisky/scenes/item.tscn")
+@onready var item_scene = load("res://src/feelin-frisky/scenes/item.tscn")
 @onready var main_menu= $GUI/MainMenu
 @onready var pause_menu = get_tree().get_root().get_node("World/GUI/PauseMenu")
 @onready var scan_timer = $ScanTimer
@@ -41,6 +41,7 @@ func _on_game_start():
 
 
 func _spawn_items():
+	randomize()
 	var locs = SpawnLocations.duplicate()
 	for i in num_items:
 		var rand_index = randi() % locs.size()
@@ -48,9 +49,8 @@ func _spawn_items():
 		# This retains the position of the Node within the Control layout.
 		var item = item_scene.instantiate()
 		locs[rand_index].add_child(item)
-		# Decide if "Deadly"?
 		locs.erase(locs[rand_index])
-	print(get_tree().get_nodes_in_group("Items"))
+	#print(get_tree().get_nodes_in_group("Items"))
 
 
 func _update_timer_bar():

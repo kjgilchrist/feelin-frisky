@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://blywf6ixdc816"]
+[gd_scene load_steps=4 format=3 uid="uid://blywf6ixdc816"]
 
 [ext_resource type="Texture2D" uid="uid://cn4q4t71w8sq8" path="res://src/feelin-frisky/art/Front-Edit.png" id="1_k55o0"]
+[ext_resource type="PackedScene" uid="uid://bl3lo0auux8xg" path="res://src/feelin-frisky/scenes/item_location.tscn" id="2_1j6b5"]
 [ext_resource type="Texture2D" uid="uid://yveny41p0hb4" path="res://src/feelin-frisky/art/Back - Edit.png" id="2_36imc"]
 
 [node name="GameBackground" type="Control"]
@@ -112,35 +113,45 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Right_Forearm" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations" groups=["SpawnLocations"]]
+[node name="ItemLocation" parent="Center/MainGrid/FrontFigure/FrontLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(104, 187)
+node_name = "Right_Forearm"
 
-[node name="Right_Breast" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations" groups=["SpawnLocations"]]
+[node name="ItemLocation2" parent="Center/MainGrid/FrontFigure/FrontLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(136, 127)
+node_name = "Right_Breast"
 
-[node name="Right_Pocket" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations" groups=["SpawnLocations"]]
+[node name="ItemLocation3" parent="Center/MainGrid/FrontFigure/FrontLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(134, 203)
+node_name = "Right_Pocket"
 
-[node name="Right_Foot" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations" groups=["SpawnLocations"]]
+[node name="ItemLocation4" parent="Center/MainGrid/FrontFigure/FrontLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(138, 428)
+node_name = "Right_Foot"
 
-[node name="Stomach" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations" groups=["SpawnLocations"]]
+[node name="ItemLocation5" parent="Center/MainGrid/FrontFigure/FrontLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(150, 166)
+node_name = "Stomach"
 
-[node name="Crotch" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations" groups=["SpawnLocations"]]
+[node name="ItemLocation6" parent="Center/MainGrid/FrontFigure/FrontLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(150, 221)
+node_name = "Crotch"
 
-[node name="Left_Forearm" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations" groups=["SpawnLocations"]]
+[node name="ItemLocation7" parent="Center/MainGrid/FrontFigure/FrontLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(198, 184)
+node_name = "Left_Forearm"
 
-[node name="Left_Breast" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations" groups=["SpawnLocations"]]
+[node name="ItemLocation8" parent="Center/MainGrid/FrontFigure/FrontLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(164, 126)
+node_name = "Left_Breast"
 
-[node name="Left_Pocket" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations" groups=["SpawnLocations"]]
+[node name="ItemLocation9" parent="Center/MainGrid/FrontFigure/FrontLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(168, 203)
+node_name = "Left_Pocket"
 
-[node name="Left_Foot" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations" groups=["SpawnLocations"]]
+[node name="ItemLocation10" parent="Center/MainGrid/FrontFigure/FrontLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(164, 428)
+node_name = "Left_Foot"
 
 [node name="BackFigure" type="TextureRect" parent="Center/MainGrid"]
 custom_minimum_size = Vector2(300, 450)
@@ -157,23 +168,29 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Left_Armpit" type="Node2D" parent="Center/MainGrid/BackFigure/BackLocations" groups=["SpawnLocations"]]
+[node name="ItemLocation" parent="Center/MainGrid/BackFigure/BackLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(127, 140)
+node_name = "Left_Armpit"
 
-[node name="Left_Butt" type="Node2D" parent="Center/MainGrid/BackFigure/BackLocations" groups=["SpawnLocations"]]
+[node name="ItemLocation2" parent="Center/MainGrid/BackFigure/BackLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(134, 215)
+node_name = "Left_Butt"
 
-[node name="Left_Thigh" type="Node2D" parent="Center/MainGrid/BackFigure/BackLocations" groups=["SpawnLocations"]]
+[node name="ItemLocation3" parent="Center/MainGrid/BackFigure/BackLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(142, 273)
+node_name = "Left_Thigh"
 
-[node name="Right_Armpit" type="Node2D" parent="Center/MainGrid/BackFigure/BackLocations" groups=["SpawnLocations"]]
+[node name="ItemLocation4" parent="Center/MainGrid/BackFigure/BackLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(174, 140)
+node_name = "Right_Armpit"
 
-[node name="Right_Butt" type="Node2D" parent="Center/MainGrid/BackFigure/BackLocations" groups=["SpawnLocations"]]
+[node name="ItemLocation5" parent="Center/MainGrid/BackFigure/BackLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(167, 215)
+node_name = "Right_Butt"
 
-[node name="Right_Thigh" type="Node2D" parent="Center/MainGrid/BackFigure/BackLocations" groups=["SpawnLocations"]]
+[node name="ItemLocation6" parent="Center/MainGrid/BackFigure/BackLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(158, 273)
+node_name = "Right_Thigh"
 
 [node name="TimerContainer" type="GridContainer" parent="Center/MainGrid"]
 layout_mode = 2

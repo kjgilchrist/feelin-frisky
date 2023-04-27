@@ -11,6 +11,8 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed(key_press):
 		# If the associated key is pressed, check for child node.
-		# If child, check if child is "Deadly"
-		# If "Deadly" then ++ "Items Confiscated"
+		if get_child_count() != 0:
+			# If child, check if child is "Deadly"
+			# If "Deadly" then ++ "Items Confiscated" - emit signal!
+			pass
 		pass
