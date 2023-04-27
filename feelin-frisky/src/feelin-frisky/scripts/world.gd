@@ -73,8 +73,11 @@ func _on_scan_timer_timeout():
 		scan_timer.wait_time -= 1
 	# Reset timer visualizer.
 	timer_bar.custom_minimum_size.x = 300
-	# Remove all Item children that still exist.
+	# Check for remaining Deadly Items.
+	# Then remove all Item children that still exist.
 	for item in get_tree().get_nodes_in_group("Items"):
+		if item.is_deadly:
+			emit_signal("update_casualties", 1)
 		item.queue_free()
 
 

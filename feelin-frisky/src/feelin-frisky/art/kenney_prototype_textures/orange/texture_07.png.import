@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpkb2cw61c7wf"
-path="res://.godot/imported/icon_deadly.svg-07a6c490f4aa261aa3f3b90415172463.ctex"
+uid="uid://kcsby12hq734"
+path="res://.godot/imported/texture_07.png-c59d19ef53ca5bf19581335a50c15319.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/feelin-frisky/art/icon_deadly.svg"
-dest_files=["res://.godot/imported/icon_deadly.svg-07a6c490f4aa261aa3f3b90415172463.ctex"]
+source_file="res://src/feelin-frisky/art/kenney_prototype_textures/orange/texture_07.png"
+dest_files=["res://.godot/imported/texture_07.png-c59d19ef53ca5bf19581335a50c15319.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

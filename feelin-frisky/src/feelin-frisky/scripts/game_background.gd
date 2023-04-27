@@ -3,6 +3,7 @@ extends Control
 @onready var world = get_tree().get_root().get_node("World")
 @onready var main_menu = get_tree().get_root().get_node("World/GUI/MainMenu")
 @onready var pause_menu = get_tree().get_root().get_node("World/GUI/PauseMenu")
+@onready var spawn_locations = get_tree().get_nodes_in_group("SpawnLocations")
 @onready var frisk_label = $Center/MainGrid/TextGrid/FriskLabel
 @onready var item_label = $Center/MainGrid/TextGrid/ItemLabel
 @onready var casualty_label = $Center/MainGrid/TextGrid/CasualtyLabel
@@ -18,6 +19,8 @@ func _ready():
 	world.connect("update_frisks", _on_update_frisks)
 	world.connect("update_items", _on_update_items)
 	world.connect("update_casualties", _on_update_casualties)
+	for spawn in spawn_locations:
+		spawn.connect("update_items", _on_update_items)
 
 
 func _on_game_start():
@@ -50,9 +53,11 @@ func _on_update_casualties(value):
 func _update_job():
 	if frisks > 0 and items > 0 and casualties == 0:
 		job_status = "Satisfactory"
-	elif casualties > 0:
+	elif casualties > 0 and casualties < 5:
 		job_status = "Unsatisfactory"
-	elif casualties > 5:
+	elif casualties > 5 and casualties < 10:
+		job_status = "Under Investigation"
+	elif casualties > 10:
 		job_status = "Definitely Fired"
 	else:
 		job_status = "Probationary"
