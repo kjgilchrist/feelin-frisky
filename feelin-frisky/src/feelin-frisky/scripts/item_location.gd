@@ -9,22 +9,18 @@ func _ready():
 	pass
 
 func _input(event):
-	#func _unhandled_input(event):
-	#if event is InputEventKey: # Check to see if this is a better way to store it?
-		#if event.pressed and event.scancode == KEY_A:
-			#get_tree().quit()
+	# Can we store the key_press within an InputEventKey object instead?
 	if event.is_action_pressed(key_press):
-		print("Pressed" + key_press)
 		# If the associated key is pressed, check for child node.
+		# Each location should and will only have one child, the item.
+		# Otherwise, the location will have no children/items.
 		if get_child_count() != 0:
-			print("Child found")
 			# If child, check if child is "Deadly"
 			if get_child(0).is_deadly:
-				print("Child deadly")
 				# If "Deadly" then ++ "Items Confiscated" - emit signal!
 				emit_signal("update_items", 1)
 			else:
-				# Play irritated noise
+				# Play irritated noise?
 				pass
-			# Remove Child
+			# Remove item when found, regardless of deadly status.
 			get_child(0).queue_free()
