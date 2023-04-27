@@ -59,7 +59,7 @@ text = "Settings"
 
 [node name="QuitBtn" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
-text = "Quit"
+text = "Quit to Menu"
 
 [node name="SettingsMenu" parent="." instance=ExtResource("2_yr55i")]
 visible = false

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://blywf6ixdc816"]
 
-[ext_resource type="Texture2D" uid="uid://be4pcried6df0" path="res://src/feelin-frisky/art/Front.png" id="1_yaxos"]
-[ext_resource type="Texture2D" uid="uid://ttvhlx2mp0qb" path="res://src/feelin-frisky/art/Back.png" id="2_aq4kl"]
+[ext_resource type="Texture2D" uid="uid://cn4q4t71w8sq8" path="res://src/feelin-frisky/art/Front-Edit.png" id="1_k55o0"]
+[ext_resource type="Texture2D" uid="uid://yveny41p0hb4" path="res://src/feelin-frisky/art/Back - Edit.png" id="2_36imc"]
 
 [node name="GameBackground" type="Control"]
 layout_mode = 3
@@ -24,14 +24,17 @@ color = Color(0, 0, 0, 1)
 [node name="TitleLabel" type="Label" parent="."]
 custom_minimum_size = Vector2(0, 75)
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 23.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -109.5
+offset_right = 109.5
+offset_bottom = 75.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 35
 text = "Feelin' Frisky"
 horizontal_alignment = 1
-vertical_alignment = 2
+vertical_alignment = 1
 
 [node name="Center" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -45,10 +48,60 @@ grow_vertical = 2
 layout_mode = 2
 columns = 3
 
-[node name="FrontFigure" type="TextureRect" parent="Center/MainGrid"]
-custom_minimum_size = Vector2(332, 550)
+[node name="StatusLabel" type="Label" parent="Center/MainGrid"]
+custom_minimum_size = Vector2(330, 0)
 layout_mode = 2
-texture = ExtResource("1_yaxos")
+text = "CURRENT STATUS"
+
+[node name="FrontLabel" type="Label" parent="Center/MainGrid"]
+layout_mode = 2
+text = "FRONT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackLabel" type="Label" parent="Center/MainGrid"]
+layout_mode = 2
+text = "BACK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextGrid" type="GridContainer" parent="Center/MainGrid"]
+layout_mode = 2
+theme_override_constants/v_separation = 10
+
+[node name="TextFiller" type="Label" parent="Center/MainGrid/TextGrid"]
+layout_mode = 2
+
+[node name="FriskLabel" type="Label" parent="Center/MainGrid/TextGrid"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Frisks Completed: #"
+
+[node name="ItemLabel" type="Label" parent="Center/MainGrid/TextGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Items Confiscated: #"
+vertical_alignment = 1
+
+[node name="CasualtyLabel" type="Label" parent="Center/MainGrid/TextGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Casualties: #"
+vertical_alignment = 1
+
+[node name="EmployLabel" type="Label" parent="Center/MainGrid/TextGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "Job: Unknown"
+vertical_alignment = 1
+
+[node name="FrontFigure" type="TextureRect" parent="Center/MainGrid"]
+custom_minimum_size = Vector2(300, 450)
+layout_mode = 2
+texture = ExtResource("1_k55o0")
 expand_mode = 1
 
 [node name="FrontLocations" type="AspectRatioContainer" parent="Center/MainGrid/FrontFigure"]
@@ -60,82 +113,41 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Right_Forearm" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations" groups=["SpawnLocations"]]
-position = Vector2(112, 247)
+position = Vector2(104, 187)
 
 [node name="Right_Breast" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations" groups=["SpawnLocations"]]
-position = Vector2(153, 182)
+position = Vector2(136, 127)
 
 [node name="Right_Pocket" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations" groups=["SpawnLocations"]]
-position = Vector2(141, 254)
+position = Vector2(134, 203)
 
 [node name="Right_Foot" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations" groups=["SpawnLocations"]]
-position = Vector2(151, 450)
+position = Vector2(138, 428)
 
 [node name="Stomach" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations" groups=["SpawnLocations"]]
-position = Vector2(165, 225)
+position = Vector2(150, 166)
 
 [node name="Crotch" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations" groups=["SpawnLocations"]]
-position = Vector2(166, 265)
+position = Vector2(150, 221)
 
 [node name="Left_Forearm" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations" groups=["SpawnLocations"]]
-position = Vector2(221, 249)
+position = Vector2(198, 184)
 
 [node name="Left_Breast" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations" groups=["SpawnLocations"]]
-position = Vector2(180, 182)
+position = Vector2(164, 126)
 
 [node name="Left_Pocket" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations" groups=["SpawnLocations"]]
-position = Vector2(191, 253)
+position = Vector2(168, 203)
 
 [node name="Left_Foot" type="Node2D" parent="Center/MainGrid/FrontFigure/FrontLocations" groups=["SpawnLocations"]]
-position = Vector2(181, 449)
-
-[node name="TextCenter" type="CenterContainer" parent="Center/MainGrid"]
-custom_minimum_size = Vector2(332, 550)
-layout_mode = 2
-
-[node name="TextGrid" type="GridContainer" parent="Center/MainGrid/TextCenter"]
-layout_mode = 2
-theme_override_constants/v_separation = 15
-
-[node name="StatusLabel" type="Label" parent="Center/MainGrid/TextCenter/TextGrid"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "CURRENT STATUS"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FriskLabel" type="Label" parent="Center/MainGrid/TextCenter/TextGrid"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 16
-text = "Frisks Complete: #"
-
-[node name="ItemLabel" type="Label" parent="Center/MainGrid/TextCenter/TextGrid"]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 0, 1)
-theme_override_font_sizes/font_size = 16
-text = "Items Confiscated: #"
-vertical_alignment = 1
-
-[node name="CasualtyLabel" type="Label" parent="Center/MainGrid/TextCenter/TextGrid"]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_font_sizes/font_size = 16
-text = "Casualties: #"
-vertical_alignment = 1
-
-[node name="EmployLabel" type="Label" parent="Center/MainGrid/TextCenter/TextGrid"]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 16
-text = "Job: Unknown"
-vertical_alignment = 1
+position = Vector2(164, 428)
 
 [node name="BackFigure" type="TextureRect" parent="Center/MainGrid"]
-custom_minimum_size = Vector2(332, 550)
+custom_minimum_size = Vector2(300, 450)
 layout_mode = 2
-texture = ExtResource("2_aq4kl")
+texture = ExtResource("2_36imc")
 expand_mode = 1
+stretch_mode = 5
 
 [node name="BackLocations" type="AspectRatioContainer" parent="Center/MainGrid/BackFigure"]
 layout_mode = 1
@@ -146,32 +158,26 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Left_Armpit" type="Node2D" parent="Center/MainGrid/BackFigure/BackLocations" groups=["SpawnLocations"]]
-position = Vector2(132, 169)
+position = Vector2(127, 140)
 
 [node name="Left_Butt" type="Node2D" parent="Center/MainGrid/BackFigure/BackLocations" groups=["SpawnLocations"]]
-position = Vector2(147, 265)
+position = Vector2(134, 215)
 
 [node name="Left_Thigh" type="Node2D" parent="Center/MainGrid/BackFigure/BackLocations" groups=["SpawnLocations"]]
-position = Vector2(157, 304)
+position = Vector2(142, 273)
 
 [node name="Right_Armpit" type="Node2D" parent="Center/MainGrid/BackFigure/BackLocations" groups=["SpawnLocations"]]
-position = Vector2(199, 167)
+position = Vector2(174, 140)
 
 [node name="Right_Butt" type="Node2D" parent="Center/MainGrid/BackFigure/BackLocations" groups=["SpawnLocations"]]
-position = Vector2(186, 264)
+position = Vector2(167, 215)
 
 [node name="Right_Thigh" type="Node2D" parent="Center/MainGrid/BackFigure/BackLocations" groups=["SpawnLocations"]]
-position = Vector2(178, 304)
-
-[node name="FrontLabel" type="Label" parent="Center/MainGrid"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "FRONT"
-horizontal_alignment = 1
-vertical_alignment = 1
+position = Vector2(158, 273)
 
 [node name="TimerContainer" type="GridContainer" parent="Center/MainGrid"]
 layout_mode = 2
+theme_override_constants/h_separation = 0
 columns = 2
 
 [node name="TimerFigure" type="TextureRect" parent="Center/MainGrid/TimerContainer"]
@@ -182,9 +188,14 @@ layout_mode = 2
 custom_minimum_size = Vector2(300, 25)
 layout_mode = 2
 
-[node name="BackLabel" type="Label" parent="Center/MainGrid"]
+[node name="FrontFiller" type="Label" parent="Center/MainGrid"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "BACK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackFiller" type="Label" parent="Center/MainGrid"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 vertical_alignment = 1

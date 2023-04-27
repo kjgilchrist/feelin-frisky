@@ -2,10 +2,11 @@ extends Control
 
 @onready var world = get_tree().get_root().get_node("World")
 @onready var main_menu = get_tree().get_root().get_node("World/GUI/MainMenu")
-@onready var frisk_label = $Center/MainGrid/TextCenter/TextGrid/FriskLabel
-@onready var item_label = $Center/MainGrid/TextCenter/TextGrid/ItemLabel
-@onready var casualty_label = $Center/MainGrid/TextCenter/TextGrid/CasualtyLabel
-@onready var employ_label = $Center/MainGrid/TextCenter/TextGrid/EmployLabel
+@onready var pause_menu = get_tree().get_root().get_node("World/GUI/PauseMenu")
+@onready var frisk_label = $Center/MainGrid/TextGrid/FriskLabel
+@onready var item_label = $Center/MainGrid/TextGrid/ItemLabel
+@onready var casualty_label = $Center/MainGrid/TextGrid/CasualtyLabel
+@onready var employ_label = $Center/MainGrid/TextGrid/EmployLabel
 var frisks = 0
 var items = 0
 var casualties = 0
@@ -13,9 +14,10 @@ var job_status = "Reset"
 
 func _ready():
 	main_menu.connect("game_start", _on_game_start)
-	world.connect("update_frisks", _on_update_frisks);
-	world.connect("update_items", _on_update_items);
-	world.connect("update_casualties", _on_update_casualties);
+	pause_menu.connect("quit_game", _on_quit_to_menu)
+	world.connect("update_frisks", _on_update_frisks)
+	world.connect("update_items", _on_update_items)
+	world.connect("update_casualties", _on_update_casualties)
 
 
 func _on_game_start():
@@ -24,12 +26,14 @@ func _on_game_start():
 	items = 0
 	casualties = 0
 	job_status = "Probationary"
-	_update_job()
+	_on_update_frisks(frisks)
+	_on_update_items(items)
+	_on_update_casualties(casualties)
 
 
 func _on_update_frisks(value):
 	frisks += value
-	frisk_label.text = "Frisks Complete: %s" % frisks
+	frisk_label.text = "Frisks Completed: %s" % frisks
 	_update_job()
 
 
@@ -44,7 +48,7 @@ func _on_update_casualties(value):
 
 
 func _update_job():
-	if frisks > 0 and casualties == 0:
+	if frisks > 0 and items > 0 and casualties == 0:
 		job_status = "Satisfactory"
 	elif casualties > 0:
 		job_status = "Unsatisfactory"
@@ -53,3 +57,7 @@ func _update_job():
 	else:
 		job_status = "Probationary"
 	employ_label.text = "Job: %s" % job_status
+
+
+func _on_quit_to_menu():
+	visible = false

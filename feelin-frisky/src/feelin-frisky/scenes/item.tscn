@@ -2,8 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://c23gnifambc6t" path="res://src/feelin-frisky/art/icon.svg" id="1_jinp2"]
 
-[node name="Item" type="Node2D" groups=["Items"]]
-
-[node name="ItemImage" type="Sprite2D" parent="."]
+[node name="ItemImage" type="Sprite2D" groups=["Items"]]
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_jinp2")
