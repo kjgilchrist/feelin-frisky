@@ -27,6 +27,10 @@ GlobalSettings="*res://src/feelin-frisky/scripts/global_settings.gd"
 
 window/size/mode=3
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 pause={
