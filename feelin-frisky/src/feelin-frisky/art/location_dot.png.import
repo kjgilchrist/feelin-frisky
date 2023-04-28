@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csbon7gs04vhr"
-path="res://.godot/imported/64x64.png-9ca81311c0c13479d43245b93189e01a.ctex"
+uid="uid://dseouf522e3lk"
+path="res://.godot/imported/location_dot.png-caa493571ddd1998e9fcc673fbabee68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/feelin-frisky/art/64x64.png"
-dest_files=["res://.godot/imported/64x64.png-9ca81311c0c13479d43245b93189e01a.ctex"]
+source_file="res://src/feelin-frisky/art/location_dot.png"
+dest_files=["res://.godot/imported/location_dot.png-caa493571ddd1998e9fcc673fbabee68.ctex"]
 
 [params]
 

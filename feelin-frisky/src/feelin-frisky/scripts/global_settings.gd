@@ -57,7 +57,7 @@ func dir_contents(path, array):
 			if dir.current_is_dir():
 				print("Found directory: " + file_name)
 			else:
-				print("Found file: " + file_name)
+				#print("Found file: " + file_name)
 				if file_name.get_extension() == "png":
 					array.append(file_name)
 					#print(file_name + " added to array " + str(array))

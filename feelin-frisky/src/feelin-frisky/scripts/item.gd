@@ -11,7 +11,7 @@ func _enter_tree():
 	# Generate random choice in array here.
 	is_deadly = randi() % 3 == 0
 	#print(is_deadly)
-	rotation = randi_range(-1,1)
+	rotation = randi_range(-10,10)
 
 
 func _ready():
