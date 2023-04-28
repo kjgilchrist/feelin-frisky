@@ -20,10 +20,12 @@ func _ready():
 		var rand_png = GlobalSettings.items_deadly_paths[randi() % GlobalSettings.items_deadly_paths.size()]
 		var rand_texture = load("res://src/feelin-frisky/art/items_deadly/" + rand_png)
 		set_texture(rand_texture)
+		texture.resource_name = rand_png.get_basename()
 	else:
 		var rand_png = GlobalSettings.items_safe_paths[randi() % GlobalSettings.items_safe_paths.size()]
 		var rand_texture = load("res://src/feelin-frisky/art/items_safe/" + rand_png)
 		set_texture(rand_texture)
+		texture.resource_name = rand_png.get_basename()
 	#scale.x = 0.025 # Scale factor for Kenney prototype textures.
 	#scale.y = 0.025
 	scale.x = 1.125

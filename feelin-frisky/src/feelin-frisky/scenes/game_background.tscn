@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://blywf6ixdc816"]
+[gd_scene load_steps=13 format=3 uid="uid://blywf6ixdc816"]
 
 [ext_resource type="Theme" uid="uid://d1kneybg6tu5b" path="res://src/feelin-frisky/ui/game_theme.tres" id="1_gkiio"]
 [ext_resource type="PackedScene" uid="uid://bl3lo0auux8xg" path="res://src/feelin-frisky/scenes/item_location.tscn" id="2_1j6b5"]
 [ext_resource type="Texture2D" uid="uid://dtfpr5h2lmdat" path="res://src/feelin-frisky/art/figure_front.png" id="2_3fgy8"]
 [ext_resource type="Texture2D" uid="uid://deub5uwul4kqu" path="res://src/feelin-frisky/art/figure_back.png" id="4_7fu7x"]
+[ext_resource type="Texture2D" uid="uid://dlkudvyxjdqd1" path="res://src/feelin-frisky/art/clock.png" id="5_6ly70"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e4qms"]
 
@@ -12,6 +13,13 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b6b3c"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ojog1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cpviq"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tc40r"]
 
@@ -37,6 +45,7 @@ scale = Vector2(1, 1.008)
 color = Color(0.921569, 0.960784, 0.960784, 1)
 
 [node name="TitleLabel" type="Label" parent="."]
+visible = false
 custom_minimum_size = Vector2(0, 75)
 layout_mode = 1
 anchors_preset = 8
@@ -122,6 +131,12 @@ theme_override_colors/font_color = Color(0, 0, 1, 1)
 theme_override_font_sizes/font_size = 16
 text = "Items Confiscated: #"
 vertical_alignment = 1
+
+[node name="FoundLabel" type="Label" parent="Center/MainGrid/Center/TextGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Last Item Found: Unknown"
 
 [node name="CasualtyLabel" type="Label" parent="Center/MainGrid/Center/TextGrid"]
 layout_mode = 2
@@ -241,17 +256,19 @@ node_name = "Right_Thigh"
 
 [node name="TimerContainer" type="GridContainer" parent="Center/MainGrid"]
 layout_mode = 2
-theme_override_constants/h_separation = 0
+theme_override_constants/h_separation = 2
 columns = 2
 
 [node name="TimerFigure" type="TextureRect" parent="Center/MainGrid/TimerContainer"]
 custom_minimum_size = Vector2(25, 25)
 layout_mode = 2
+texture = ExtResource("5_6ly70")
+expand_mode = 1
 
-[node name="TimerVisual" type="ColorRect" parent="Center/MainGrid/TimerContainer"]
-custom_minimum_size = Vector2(300, 25)
+[node name="TimerVisual" type="Panel" parent="Center/MainGrid/TimerContainer"]
+custom_minimum_size = Vector2(295, 25)
 layout_mode = 2
-color = Color(0, 0, 0, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_cpviq")
 
 [node name="FrontFiller" type="Label" parent="Center/MainGrid"]
 layout_mode = 2

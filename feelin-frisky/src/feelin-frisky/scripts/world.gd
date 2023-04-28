@@ -8,6 +8,7 @@ extends Node2D
 @onready var timer_bar = get_tree().get_root().get_node("World/GUI/GameBackground/Center/MainGrid/TimerContainer/TimerVisual")
 signal update_frisks(value)
 signal update_items(value)
+signal update_found(string)
 signal update_casualties(value)
 var num_items
 
@@ -16,7 +17,7 @@ func _ready():
 	main_menu.connect("game_start", _on_game_start)
 	pause_menu.connect("quit_game", _on_quit_to_menu)
 	num_items = 5
-	scan_timer.wait_time = 15 # Reset to 15 after testing
+	scan_timer.wait_time = 10 # Reset to 10 after testing
 
 
 func _process(_delta):
@@ -38,6 +39,7 @@ func _on_game_start():
 	emit_signal("update_frisks", 0)
 	emit_signal("update_items", 0)
 	emit_signal("update_casualties", 0)
+	emit_signal("update_found", "None")
 
 
 func _spawn_items():
@@ -56,7 +58,7 @@ func _spawn_items():
 func _update_timer_bar():
 	var fraction_left = (scan_timer.time_left / scan_timer.wait_time)
 	# Force percent to be a float to avoid float errors.
-	var bar_percent = int(300 * fraction_left)
+	var bar_percent = int(295 * fraction_left)
 	timer_bar.custom_minimum_size.x = bar_percent
 
 
@@ -72,7 +74,7 @@ func _on_scan_timer_timeout():
 	if scan_timer.wait_time > 5:
 		scan_timer.wait_time -= 1
 	# Reset timer visualizer.
-	timer_bar.custom_minimum_size.x = 300
+	timer_bar.custom_minimum_size.x = 295
 	# Check for remaining Deadly Items.
 	# Then remove all Item children that still exist.
 	for item in get_tree().get_nodes_in_group("Items"):
@@ -86,4 +88,4 @@ func _on_quit_to_menu():
 		scan_timer.stop()
 		scan_timer.emit_signal("timeout")
 	num_items = 5
-	scan_timer.wait_time = 15 # Reset to 15 after testing
+	scan_timer.wait_time = 15 # Reset to 10 after testing

@@ -6,6 +6,7 @@ extends Control
 @onready var spawn_locations = get_tree().get_nodes_in_group("SpawnLocations")
 @onready var frisk_label = $Center/MainGrid/Center/TextGrid/FriskLabel
 @onready var item_label = $Center/MainGrid/Center/TextGrid/ItemLabel
+@onready var found_label = $Center/MainGrid/Center/TextGrid/FoundLabel
 @onready var casualty_label = $Center/MainGrid/Center/TextGrid/CasualtyLabel
 @onready var employ_label = $Center/MainGrid/Center/TextGrid/EmployLabel
 var frisks = 0
@@ -18,9 +19,11 @@ func _ready():
 	pause_menu.connect("quit_game", _on_quit_to_menu)
 	world.connect("update_frisks", _on_update_frisks)
 	world.connect("update_items", _on_update_items)
+	world.connect("update_found", _on_update_found)
 	world.connect("update_casualties", _on_update_casualties)
 	for spawn in spawn_locations:
 		spawn.connect("update_items", _on_update_items)
+		spawn.connect("update_found", _on_update_found)
 
 
 func _on_game_start():
@@ -43,6 +46,10 @@ func _on_update_frisks(value):
 func _on_update_items(value):
 	items += value
 	item_label.text = "Items Confiscated: %s" % items
+
+
+func _on_update_found(string):
+	found_label.text = "Last Item Found: " + string
 
 
 func _on_update_casualties(value):

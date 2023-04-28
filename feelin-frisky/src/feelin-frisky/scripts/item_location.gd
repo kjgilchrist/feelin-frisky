@@ -3,6 +3,7 @@ extends Node2D
 @export var node_name : String
 @export var key_press : String
 signal update_items(value)
+signal update_found(string)
 
 
 func _ready():
@@ -15,7 +16,9 @@ func _input(event):
 		# Each location should and will only have one child, the item.
 		# Otherwise, the location will have no children/items.
 		if get_child_count() != 0:
-			# If child, check if child is "Deadly"
+			var item_name = get_child(0).texture.resource_name
+			emit_signal("update_found", item_name)
+			# Check if child is "Deadly"
 			if get_child(0).is_deadly:
 				# If "Deadly" then ++ "Items Confiscated" - emit signal!
 				emit_signal("update_items", 1)
