@@ -1,0 +1,25 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://d1kneybg6tu5b"]
+
+[ext_resource type="FontFile" uid="uid://cqcwcy7r8gn43" path="res://src/feelin-frisky/fonts/IBMPlexMono-Regular.ttf" id="1_itqoc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6ql0"]
+content_margin_left = 5.0
+content_margin_top = 2.0
+content_margin_right = 5.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 1
+shadow_offset = Vector2(1, 1)
+
+[resource]
+default_font = ExtResource("1_itqoc")
+Label/styles/normal = SubResource("StyleBoxFlat_t6ql0")

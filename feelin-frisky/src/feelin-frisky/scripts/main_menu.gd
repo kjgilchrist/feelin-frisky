@@ -2,6 +2,7 @@ extends Control
 
 @onready var pause_menu = get_tree().get_root().get_node("World/GUI/PauseMenu")
 @onready var settings_menu = $SettingsMenu
+@onready var how_to_window = $HowToPlay
 signal game_start
 
 func _ready():
@@ -23,3 +24,7 @@ func _on_start_btn_pressed():
 
 func _on_quit_to_menu():
 	visible = true
+
+
+func _on_how_to_play_btn_pressed():
+	how_to_window.popup_centered()

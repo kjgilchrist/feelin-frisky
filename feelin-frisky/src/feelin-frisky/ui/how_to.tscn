@@ -1,0 +1,104 @@
+[gd_scene load_steps=4 format=3 uid="uid://ca605oyr3rguu"]
+
+[ext_resource type="Theme" uid="uid://d1kneybg6tu5b" path="res://src/feelin-frisky/ui/game_theme.tres" id="1_n4wik"]
+[ext_resource type="Script" path="res://src/feelin-frisky/scripts/how_to.gd" id="2_eyqj6"]
+[ext_resource type="Texture2D" uid="uid://diw61uitx0m1f" path="res://src/feelin-frisky/art/kenney_prototype_textures/red/texture_01.png" id="3_s7r3o"]
+
+[node name="HowToPlay" type="Window"]
+initial_position = 1
+title = "How to Play"
+size = Vector2i(700, 650)
+visible = false
+theme = ExtResource("1_n4wik")
+script = ExtResource("2_eyqj6")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.921569, 0.960784, 0.960784, 1)
+
+[node name="Center" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Vertical" type="GridContainer" parent="Center"]
+layout_mode = 2
+theme_override_constants/v_separation = 20
+
+[node name="Overview" type="Label" parent="Center/Vertical"]
+custom_minimum_size = Vector2(650, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Feelin' Frisky is a two player, cooperative game where you and a friend become TSA Employees working an airport security line."
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Goal" type="Label" parent="Center/Vertical"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "As a team, you must interpret the body scanner and frisk airport travellers, preventing dangerous objects from reaching the planes and resulting in casualties!"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Challenges" type="Label" parent="Center/Vertical"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "But don't forget: THE BOSS IS WATCHING. You must complete each frisk in a timely manner or things will slip through the cracks."
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Center" type="CenterContainer" parent="Center/Vertical"]
+layout_mode = 2
+
+[node name="PlayerInstructions" type="GridContainer" parent="Center/Vertical/Center"]
+custom_minimum_size = Vector2(650, 0)
+layout_mode = 2
+theme_override_constants/h_separation = 25
+columns = 2
+
+[node name="ScreenLabel" type="Label" parent="Center/Vertical/Center/PlayerInstructions"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "PLAYER ONE: Observe the scanner screen, identify dangerous objects and communicate locations on the body. Keep it moving, people!"
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ScreenImage" type="TextureRect" parent="Center/Vertical/Center/PlayerInstructions"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+texture = ExtResource("3_s7r3o")
+expand_mode = 1
+
+[node name="GlovesImage" type="TextureRect" parent="Center/Vertical/Center/PlayerInstructions"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+texture = ExtResource("3_s7r3o")
+expand_mode = 1
+
+[node name="GlovesLabel" type="Label" parent="Center/Vertical/Center/PlayerInstructions"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "PLAYER TWO: Start the scanner, wear PPE (red gloves), and  frisk the traveller to remove dangerous objects found by the scanner."
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="End" type="Label" parent="Center/Vertical"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Work fast, have fun and protect innocent travellers as they go on that nice vacation that you wish you could take! GOOD LUCK!"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]

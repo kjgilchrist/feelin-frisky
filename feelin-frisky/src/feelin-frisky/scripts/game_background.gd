@@ -4,10 +4,10 @@ extends Control
 @onready var main_menu = get_tree().get_root().get_node("World/GUI/MainMenu")
 @onready var pause_menu = get_tree().get_root().get_node("World/GUI/PauseMenu")
 @onready var spawn_locations = get_tree().get_nodes_in_group("SpawnLocations")
-@onready var frisk_label = $Center/MainGrid/TextGrid/FriskLabel
-@onready var item_label = $Center/MainGrid/TextGrid/ItemLabel
-@onready var casualty_label = $Center/MainGrid/TextGrid/CasualtyLabel
-@onready var employ_label = $Center/MainGrid/TextGrid/EmployLabel
+@onready var frisk_label = $Center/MainGrid/Center/TextGrid/FriskLabel
+@onready var item_label = $Center/MainGrid/Center/TextGrid/ItemLabel
+@onready var casualty_label = $Center/MainGrid/Center/TextGrid/CasualtyLabel
+@onready var employ_label = $Center/MainGrid/Center/TextGrid/EmployLabel
 var frisks = 0
 var items = 0
 var casualties = 0

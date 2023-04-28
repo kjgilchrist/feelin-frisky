@@ -3,6 +3,7 @@ extends Control
 var is_paused: set = _set_is_paused, get = _get_is_paused
 @onready var main_menu = get_tree().get_root().get_node("World/GUI/MainMenu")
 @onready var settings_menu = $SettingsMenu
+@onready var how_to_window = $HowToPlay
 signal quit_game
 
 func _input(event):
@@ -31,3 +32,7 @@ func _on_quit_btn_pressed():
 
 func _on_settings_btn_pressed():
 	settings_menu.popup_centered()
+
+
+func _on_how_to_play_btn_pressed():
+	how_to_window.popup_centered()

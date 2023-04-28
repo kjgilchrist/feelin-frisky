@@ -1,12 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://blywf6ixdc816"]
+[gd_scene load_steps=11 format=3 uid="uid://blywf6ixdc816"]
 
-[ext_resource type="FontFile" uid="uid://cqcwcy7r8gn43" path="res://src/feelin-frisky/fonts/IBMPlexMono-Regular.ttf" id="1_6ykq4"]
+[ext_resource type="Theme" uid="uid://d1kneybg6tu5b" path="res://src/feelin-frisky/ui/game_theme.tres" id="1_gkiio"]
 [ext_resource type="PackedScene" uid="uid://bl3lo0auux8xg" path="res://src/feelin-frisky/scenes/item_location.tscn" id="2_1j6b5"]
 [ext_resource type="Texture2D" uid="uid://dtfpr5h2lmdat" path="res://src/feelin-frisky/art/figure_front.png" id="2_3fgy8"]
 [ext_resource type="Texture2D" uid="uid://deub5uwul4kqu" path="res://src/feelin-frisky/art/figure_back.png" id="4_7fu7x"]
 
-[sub_resource type="Theme" id="Theme_h3tll"]
-default_font = ExtResource("1_6ykq4")
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e4qms"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nrdvw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b6b3c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ojog1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tc40r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_84p3b"]
 
 [node name="GameBackground" type="Control"]
 layout_mode = 3
@@ -15,7 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_h3tll")
+theme = ExtResource("1_gkiio")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -24,21 +33,27 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.992188, 1)
+scale = Vector2(1, 1.008)
 color = Color(0.921569, 0.960784, 0.960784, 1)
 
 [node name="TitleLabel" type="Label" parent="."]
 custom_minimum_size = Vector2(0, 75)
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -109.5
-offset_right = 109.5
-offset_bottom = 75.0
+anchor_bottom = 0.5
+offset_left = -147.0
+offset_top = -324.0
+offset_right = 147.0
+offset_bottom = -249.0
 grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.995844)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxEmpty_e4qms")
 text = "Feelin' Frisky"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -55,11 +70,11 @@ grow_vertical = 2
 layout_mode = 2
 columns = 3
 
-[node name="StatusLabel" type="Label" parent="Center/MainGrid"]
+[node name="TopFiller" type="Label" parent="Center/MainGrid"]
 custom_minimum_size = Vector2(330, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "CURRENT STATUS"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nrdvw")
 
 [node name="FrontLabel" type="Label" parent="Center/MainGrid"]
 layout_mode = 2
@@ -75,39 +90,61 @@ text = "BACK"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextGrid" type="GridContainer" parent="Center/MainGrid"]
+[node name="Center" type="CenterContainer" parent="Center/MainGrid"]
+layout_mode = 2
+
+[node name="TextGrid" type="GridContainer" parent="Center/MainGrid/Center"]
 layout_mode = 2
 theme_override_constants/v_separation = 10
 
-[node name="TextFiller" type="Label" parent="Center/MainGrid/TextGrid"]
+[node name="StepsLabel" type="Label" parent="Center/MainGrid/Center/TextGrid"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "STEP ONE: Begin scan.
+STEP TWO: Identify and communicate dangerous objects.
+STEP THREE: Frisk and remove.
+STEP FOUR: Repeat."
+autowrap_mode = 3
 
-[node name="FriskLabel" type="Label" parent="Center/MainGrid/TextGrid"]
+[node name="TextFiller" type="Label" parent="Center/MainGrid/Center/TextGrid"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b6b3c")
+
+[node name="FriskLabel" type="Label" parent="Center/MainGrid/Center/TextGrid"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
 text = "Frisks Completed: #"
 
-[node name="ItemLabel" type="Label" parent="Center/MainGrid/TextGrid"]
+[node name="ItemLabel" type="Label" parent="Center/MainGrid/Center/TextGrid"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 1, 1)
 theme_override_font_sizes/font_size = 16
 text = "Items Confiscated: #"
 vertical_alignment = 1
 
-[node name="CasualtyLabel" type="Label" parent="Center/MainGrid/TextGrid"]
+[node name="CasualtyLabel" type="Label" parent="Center/MainGrid/Center/TextGrid"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
 text = "Casualties: #"
 vertical_alignment = 1
 
-[node name="EmployLabel" type="Label" parent="Center/MainGrid/TextGrid"]
+[node name="EmployLabel" type="Label" parent="Center/MainGrid/Center/TextGrid"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
 text = "Job: Unknown"
 vertical_alignment = 1
+
+[node name="TextFiller2" type="Label" parent="Center/MainGrid/Center/TextGrid"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ojog1")
+
+[node name="ScanLabel" type="Label" parent="Center/MainGrid/Center/TextGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Press neck to begin next scan."
 
 [node name="FrontFigure" type="TextureRect" parent="Center/MainGrid"]
 custom_minimum_size = Vector2(300, 450)
@@ -219,11 +256,13 @@ color = Color(0, 0, 0, 1)
 [node name="FrontFiller" type="Label" parent="Center/MainGrid"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tc40r")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BackFiller" type="Label" parent="Center/MainGrid"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_84p3b")
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://sxw3wekysiad"]
+[gd_scene load_steps=6 format=3 uid="uid://sxw3wekysiad"]
 
 [ext_resource type="Script" path="res://src/feelin-frisky/scripts/main_menu.gd" id="1_dotrf"]
-[ext_resource type="PackedScene" path="res://src/feelin-frisky/scenes/settings_menu.tscn" id="2_gibed"]
+[ext_resource type="Theme" uid="uid://d1kneybg6tu5b" path="res://src/feelin-frisky/ui/game_theme.tres" id="1_x5el3"]
+[ext_resource type="PackedScene" uid="uid://cqqvojdju6nah" path="res://src/feelin-frisky/scenes/settings_menu.tscn" id="2_gibed"]
+[ext_resource type="PackedScene" uid="uid://ca605oyr3rguu" path="res://src/feelin-frisky/ui/how_to.tscn" id="4_4akau"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hxqqu"]
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
@@ -11,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_x5el3")
 script = ExtResource("1_dotrf")
 
 [node name="Background" type="ColorRect" parent="."]
@@ -36,6 +41,7 @@ layout_mode = 2
 [node name="TitleLabel" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hxqqu")
 text = "Feelin' Frisky"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -44,7 +50,12 @@ vertical_alignment = 1
 layout_mode = 2
 text = "Start Game"
 
+[node name="HowToPlayBtn" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "How to Play"
+
 [node name="SettingsBtn" type="Button" parent="CenterContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Settings"
 
@@ -55,6 +66,9 @@ text = "Quit"
 [node name="SettingsMenu" parent="." instance=ExtResource("2_gibed")]
 visible = false
 
+[node name="HowToPlay" parent="." instance=ExtResource("4_4akau")]
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/StartBtn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HowToPlayBtn" to="." method="_on_how_to_play_btn_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/SettingsBtn" to="." method="_on_settings_btn_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/QuitBtn" to="." method="_on_quit_btn_pressed"]

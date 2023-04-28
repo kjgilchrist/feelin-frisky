@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dpvu537p78c6w"]
+[gd_scene load_steps=6 format=3 uid="uid://dpvu537p78c6w"]
 
+[ext_resource type="Theme" uid="uid://d1kneybg6tu5b" path="res://src/feelin-frisky/ui/game_theme.tres" id="1_3vqc7"]
 [ext_resource type="Script" path="res://src/feelin-frisky/scripts/pause_menu.gd" id="1_n82xb"]
-[ext_resource type="PackedScene" path="res://src/feelin-frisky/scenes/settings_menu.tscn" id="2_yr55i"]
+[ext_resource type="PackedScene" uid="uid://cqqvojdju6nah" path="res://src/feelin-frisky/scenes/settings_menu.tscn" id="2_yr55i"]
+[ext_resource type="PackedScene" uid="uid://ca605oyr3rguu" path="res://src/feelin-frisky/ui/how_to.tscn" id="4_jnbhu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qjb5w"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -12,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_3vqc7")
 script = ExtResource("1_n82xb")
 
 [node name="Background" type="ColorRect" parent="."]
@@ -34,8 +39,9 @@ grow_vertical = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+[node name="PauseLabel" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qjb5w")
 text = "Paused"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -44,7 +50,12 @@ vertical_alignment = 1
 layout_mode = 2
 text = "Resume Game"
 
+[node name="HowToPlayBtn" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "How to Play"
+
 [node name="SettingsBtn" type="Button" parent="CenterContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Settings"
 
@@ -55,6 +66,9 @@ text = "Quit to Menu"
 [node name="SettingsMenu" parent="." instance=ExtResource("2_yr55i")]
 visible = false
 
+[node name="HowToPlay" parent="." instance=ExtResource("4_jnbhu")]
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ResumeBtn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HowToPlayBtn" to="." method="_on_how_to_play_btn_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/SettingsBtn" to="." method="_on_settings_btn_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/QuitBtn" to="." method="_on_quit_btn_pressed"]

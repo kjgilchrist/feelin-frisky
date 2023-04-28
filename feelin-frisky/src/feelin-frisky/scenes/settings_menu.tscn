@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=2 format=3 uid="uid://cqqvojdju6nah"]
 
 [ext_resource type="Script" path="res://src/feelin-frisky/scripts/settings_menu.gd" id="1_u35gg"]
 
