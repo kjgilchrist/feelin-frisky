@@ -114,7 +114,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ItemLocation" parent="Center/MainGrid/FrontFigure/FrontLocations" instance=ExtResource("2_1j6b5")]
-position = Vector2(104, 187)
+position = Vector2(101, 192)
 node_name = "Right_Forearm"
 
 [node name="ItemLocation2" parent="Center/MainGrid/FrontFigure/FrontLocations" instance=ExtResource("2_1j6b5")]
@@ -122,11 +122,11 @@ position = Vector2(136, 127)
 node_name = "Right_Breast"
 
 [node name="ItemLocation3" parent="Center/MainGrid/FrontFigure/FrontLocations" instance=ExtResource("2_1j6b5")]
-position = Vector2(134, 203)
+position = Vector2(127, 201)
 node_name = "Right_Pocket"
 
 [node name="ItemLocation4" parent="Center/MainGrid/FrontFigure/FrontLocations" instance=ExtResource("2_1j6b5")]
-position = Vector2(138, 428)
+position = Vector2(137, 425)
 node_name = "Right_Foot"
 
 [node name="ItemLocation5" parent="Center/MainGrid/FrontFigure/FrontLocations" instance=ExtResource("2_1j6b5")]
@@ -134,11 +134,11 @@ position = Vector2(150, 166)
 node_name = "Stomach"
 
 [node name="ItemLocation6" parent="Center/MainGrid/FrontFigure/FrontLocations" instance=ExtResource("2_1j6b5")]
-position = Vector2(150, 221)
+position = Vector2(150, 216)
 node_name = "Crotch"
 
 [node name="ItemLocation7" parent="Center/MainGrid/FrontFigure/FrontLocations" instance=ExtResource("2_1j6b5")]
-position = Vector2(198, 184)
+position = Vector2(202, 193)
 node_name = "Left_Forearm"
 
 [node name="ItemLocation8" parent="Center/MainGrid/FrontFigure/FrontLocations" instance=ExtResource("2_1j6b5")]
@@ -146,11 +146,11 @@ position = Vector2(164, 126)
 node_name = "Left_Breast"
 
 [node name="ItemLocation9" parent="Center/MainGrid/FrontFigure/FrontLocations" instance=ExtResource("2_1j6b5")]
-position = Vector2(168, 203)
+position = Vector2(175, 202)
 node_name = "Left_Pocket"
 
 [node name="ItemLocation10" parent="Center/MainGrid/FrontFigure/FrontLocations" instance=ExtResource("2_1j6b5")]
-position = Vector2(164, 428)
+position = Vector2(164, 425)
 node_name = "Left_Foot"
 
 [node name="BackFigure" type="TextureRect" parent="Center/MainGrid"]
@@ -177,7 +177,7 @@ position = Vector2(134, 215)
 node_name = "Left_Butt"
 
 [node name="ItemLocation3" parent="Center/MainGrid/BackFigure/BackLocations" instance=ExtResource("2_1j6b5")]
-position = Vector2(142, 273)
+position = Vector2(135, 272)
 node_name = "Left_Thigh"
 
 [node name="ItemLocation4" parent="Center/MainGrid/BackFigure/BackLocations" instance=ExtResource("2_1j6b5")]
@@ -189,7 +189,7 @@ position = Vector2(167, 215)
 node_name = "Right_Butt"
 
 [node name="ItemLocation6" parent="Center/MainGrid/BackFigure/BackLocations" instance=ExtResource("2_1j6b5")]
-position = Vector2(158, 273)
+position = Vector2(166, 272)
 node_name = "Right_Thigh"
 
 [node name="TimerContainer" type="GridContainer" parent="Center/MainGrid"]
