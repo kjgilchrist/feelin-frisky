@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://j06p1r4bvtn4"]
+
+[ext_resource type="Texture2D" uid="uid://dseouf522e3lk" path="res://src/feelin-frisky/art/location_dot.png" id="1_gfc2p"]
+[ext_resource type="FontFile" uid="uid://bw3sxn8qd4ife" path="res://src/feelin-frisky/fonts/IBMPlexMono-Bold.ttf" id="1_ium2b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1fdgm"]
+
+[node name="DebugNode" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.0980392)
+show_behind_parent = true
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_gfc2p")
+
+[node name="DebugLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(5, 0)
+offset_left = -40.0
+offset_top = -15.0
+offset_right = -10.0
+offset_bottom = 15.0
+theme_override_colors/font_color = Color(1, 0, 1, 1)
+theme_override_fonts/font = ExtResource("1_ium2b")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1fdgm")
+text = "n/a"
+horizontal_alignment = 1
+vertical_alignment = 1

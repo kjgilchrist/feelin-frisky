@@ -4,14 +4,17 @@ extends Node2D
 @export var key_press : String
 signal update_items(value)
 signal update_found(string)
-
+signal update_irritations(value)
+@export var front : bool
+@export var right : bool
+@export var left : bool
 
 func _ready():
 	pass
 
 func _input(event):
 	# Can we store the key_press within an InputEventKey object instead?
-	if event.is_action_pressed(key_press):
+	if event.is_action_pressed(key_press) or event.is_action_pressed("all_nodes"):
 		# If the associated key is pressed, check for child node.
 		# Each location should and will only have one child, the item.
 		# Otherwise, the location will have no children/items.
@@ -24,6 +27,6 @@ func _input(event):
 				emit_signal("update_items", 1)
 			else:
 				# Play irritated noise?
-				pass
+				emit_signal("update_irritations", 1)
 			# Remove item when found, regardless of deadly status.
 			get_child(0).queue_free()

@@ -9,7 +9,9 @@ extends Node2D
 signal update_frisks(value)
 signal update_items(value)
 signal update_found(string)
+signal update_irritations(value)
 signal update_casualties(value)
+signal update_scanning(bool)
 var num_items
 
 
@@ -17,14 +19,20 @@ func _ready():
 	main_menu.connect("game_start", _on_game_start)
 	pause_menu.connect("quit_game", _on_quit_to_menu)
 	num_items = 5
-	scan_timer.wait_time = 10 # Reset to 10 after testing
+	scan_timer.wait_time = 20
+	for debug in get_tree().get_nodes_in_group("Debug"):
+		debug.visible = true
 
 
 func _process(_delta):
 	# If Enter/Neck Button is pressed and the timer isn't going.
-	if Input.is_action_pressed("start_scan") and scan_timer.time_left == 0:
+	if Input.is_action_just_pressed("start_scan") and scan_timer.time_left == 0:
 		scan_timer.start()
 		_spawn_items()
+		emit_signal("update_scanning", true)
+	elif Input.is_action_just_pressed("start_scan") and scan_timer.time_left > 0:
+		scan_timer.stop()
+		scan_timer.emit_signal("timeout")
 	# If the timer is going, move bar visualizer.
 	if scan_timer.time_left > 0:
 		_update_timer_bar()
@@ -38,6 +46,7 @@ func _process(_delta):
 func _on_game_start():
 	emit_signal("update_frisks", 0)
 	emit_signal("update_items", 0)
+	emit_signal("update_irritations", 0)
 	emit_signal("update_casualties", 0)
 	emit_signal("update_found", "None")
 
@@ -65,6 +74,7 @@ func _update_timer_bar():
 func _on_scan_timer_timeout():
 	# Regardless of outcome, the frisk is over. Increase frisks.
 	emit_signal("update_frisks", 1)
+	emit_signal("update_scanning", false)
 	# Check remaining items to see if any are "Deadly" and update casualties.
 	# HERE
 	# Each time they complete a frisk, the number of items increases to a max.
@@ -88,4 +98,4 @@ func _on_quit_to_menu():
 		scan_timer.stop()
 		scan_timer.emit_signal("timeout")
 	num_items = 5
-	scan_timer.wait_time = 15 # Reset to 10 after testing
+	scan_timer.wait_time = 20

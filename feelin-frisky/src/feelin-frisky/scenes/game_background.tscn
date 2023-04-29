@@ -21,7 +21,7 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tc40r"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jhbf2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_84p3b"]
 
@@ -97,6 +97,7 @@ layout_mode = 2
 theme_override_constants/v_separation = 10
 
 [node name="StepsLabel" type="Label" parent="Center/MainGrid/Center/TextGrid"]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "STEP ONE: Begin scan.
@@ -122,11 +123,12 @@ theme_override_font_sizes/font_size = 16
 text = "Items Confiscated: #"
 vertical_alignment = 1
 
-[node name="FoundLabel" type="Label" parent="Center/MainGrid/Center/TextGrid"]
+[node name="IrritateLabel" type="Label" parent="Center/MainGrid/Center/TextGrid"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
-text = "Last Item Found: Unknown"
+text = "False Alarms: #"
+vertical_alignment = 1
 
 [node name="CasualtyLabel" type="Label" parent="Center/MainGrid/Center/TextGrid"]
 layout_mode = 2
@@ -146,10 +148,11 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ojog1")
 
-[node name="ScanLabel" type="Label" parent="Center/MainGrid/Center/TextGrid"]
+[node name="FoundLabel" type="Label" parent="Center/MainGrid/Center/TextGrid"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Press neck to begin next scan."
+theme_override_font_sizes/font_size = 16
+text = "Last Item Found: Unknown"
 
 [node name="FrontFigure" type="TextureRect" parent="Center/MainGrid"]
 custom_minimum_size = Vector2(300, 450)
@@ -168,42 +171,78 @@ grow_vertical = 2
 [node name="ItemLocation" parent="Center/MainGrid/FrontFigure/FrontLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(101, 192)
 node_name = "Right_Forearm"
+key_press = "_1"
+front = true
+right = true
 
 [node name="ItemLocation2" parent="Center/MainGrid/FrontFigure/FrontLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(136, 127)
 node_name = "Right_Breast"
+key_press = "_2"
+front = true
+right = true
 
 [node name="ItemLocation3" parent="Center/MainGrid/FrontFigure/FrontLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(127, 201)
 node_name = "Right_Pocket"
+key_press = "_6"
+front = true
+right = true
 
 [node name="ItemLocation4" parent="Center/MainGrid/FrontFigure/FrontLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(137, 425)
 node_name = "Right_Foot"
+key_press = "_9"
+front = true
+right = true
 
 [node name="ItemLocation5" parent="Center/MainGrid/FrontFigure/FrontLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(150, 166)
 node_name = "Stomach"
+key_press = "_5"
+front = true
 
 [node name="ItemLocation6" parent="Center/MainGrid/FrontFigure/FrontLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(150, 216)
 node_name = "Crotch"
+key_press = "_8"
+front = true
 
 [node name="ItemLocation7" parent="Center/MainGrid/FrontFigure/FrontLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(202, 193)
 node_name = "Left_Forearm"
+key_press = "_4"
+front = true
+left = true
 
 [node name="ItemLocation8" parent="Center/MainGrid/FrontFigure/FrontLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(164, 126)
 node_name = "Left_Breast"
+key_press = "_3"
+front = true
+left = true
 
 [node name="ItemLocation9" parent="Center/MainGrid/FrontFigure/FrontLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(175, 202)
 node_name = "Left_Pocket"
+key_press = "_7"
+front = true
+left = true
 
 [node name="ItemLocation10" parent="Center/MainGrid/FrontFigure/FrontLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(164, 425)
 node_name = "Left_Foot"
+key_press = "_0"
+front = true
+left = true
+
+[node name="FrontDebug" type="AspectRatioContainer" parent="Center/MainGrid/FrontFigure"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="BackFigure" type="TextureRect" parent="Center/MainGrid"]
 custom_minimum_size = Vector2(300, 450)
@@ -223,26 +262,46 @@ grow_vertical = 2
 [node name="ItemLocation" parent="Center/MainGrid/BackFigure/BackLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(127, 140)
 node_name = "Left_Armpit"
+key_press = "_q"
+right = true
 
 [node name="ItemLocation2" parent="Center/MainGrid/BackFigure/BackLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(134, 215)
 node_name = "Left_Butt"
+key_press = "_e"
+right = true
 
 [node name="ItemLocation3" parent="Center/MainGrid/BackFigure/BackLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(135, 272)
 node_name = "Left_Thigh"
+key_press = "_t"
+right = true
 
 [node name="ItemLocation4" parent="Center/MainGrid/BackFigure/BackLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(174, 140)
 node_name = "Right_Armpit"
+key_press = "_w"
+left = true
 
 [node name="ItemLocation5" parent="Center/MainGrid/BackFigure/BackLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(167, 215)
 node_name = "Right_Butt"
+key_press = "_r"
+left = true
 
 [node name="ItemLocation6" parent="Center/MainGrid/BackFigure/BackLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(166, 272)
 node_name = "Right_Thigh"
+key_press = "_y"
+left = true
+
+[node name="BackDebug" type="AspectRatioContainer" parent="Center/MainGrid/BackFigure"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TimerContainer" type="GridContainer" parent="Center/MainGrid"]
 layout_mode = 2
@@ -260,12 +319,11 @@ custom_minimum_size = Vector2(295, 25)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_cpviq")
 
-[node name="FrontFiller" type="Label" parent="Center/MainGrid"]
+[node name="ScanLabel" type="Label" parent="Center/MainGrid"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxEmpty_tc40r")
-horizontal_alignment = 1
-vertical_alignment = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jhbf2")
+text = "Scanner needs repairs."
 
 [node name="BackFiller" type="Label" parent="Center/MainGrid"]
 layout_mode = 2
