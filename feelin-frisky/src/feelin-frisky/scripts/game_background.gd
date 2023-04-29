@@ -19,6 +19,7 @@ var items = 0
 var irritations = 0
 var casualties = 0
 var job_status = "Reset"
+signal game_over(value1, value2, value3, value4, string)
 
 func _ready():
 	randomize()
@@ -50,6 +51,11 @@ func _on_game_start():
 	_on_update_items(items)
 	_on_update_irritations(irritations)
 	_on_update_casualties(casualties)
+
+
+func _process(_delta):
+	if casualties > 20:
+		emit_signal("game_over", frisks, items, irritations, casualties, job_status)
 
 
 func _on_update_scanning(scanning):
@@ -101,11 +107,11 @@ func _update_job():
 			elif irritations > 0 and items > 0:
 				job_status = "Under Scrutiny"
 			elif irritations > 5 or items == 0:
-				job_status = "Probably Fired"
+				job_status = "Unsatisfactory"
 			else:
 				job_status = "What is Going On"
 		elif casualties > 5 and casualties < 10:
-			job_status = "Unsatisfactory"
+			job_status = "Probably Fired"
 		elif casualties > 10:
 			job_status = "Under Investigation"
 	else:
@@ -124,18 +130,9 @@ func _spawn_debug(spawn):
 	item.get_node("DebugLabel").text = spawn.key_press
 	item.position.x = spawn.position.x
 	item.position.y = spawn.position.y
-#	if spawn.right:
-#		item.get_node("DebugLabel").position.x = -30
-#		item.get_node("DebugLabel").position.y = -15
-#	elif spawn.left:
-#		item.get_node("DebugLabel").position.x = 0
-#		item.get_node("DebugLabel").position.y = -15
-#	else:
 	item.get_node("DebugLabel").position.x = -15
 	item.get_node("DebugLabel").position.y = 0
 	if spawn.front:
 		front_spawn.add_child(item)
-		#print("Debug Child " + str(item) + " of " + str(spawn) + " at Front, (" + str(item.position.x) + ", " + str(item.position.y) + ")")
 	else:
 		back_spawn.add_child(item)
-		#print("Debug Child " + str(item) + " of " + str(spawn) + " at Back, (" + str(item.position.x) + ", " + str(item.position.y) + ")")

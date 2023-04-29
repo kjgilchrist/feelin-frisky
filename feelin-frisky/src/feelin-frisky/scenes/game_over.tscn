@@ -1,0 +1,87 @@
+[gd_scene load_steps=6 format=3 uid="uid://1rf1jy3d4g3l"]
+
+[ext_resource type="Theme" uid="uid://d1kneybg6tu5b" path="res://src/feelin-frisky/ui/game_theme.tres" id="1_2fqhg"]
+[ext_resource type="Script" path="res://src/feelin-frisky/scripts/game_over.gd" id="2_yrpwn"]
+[ext_resource type="FontFile" uid="uid://cjxok62tpowyl" path="res://src/feelin-frisky/fonts/IBMPlexMono-BoldItalic.ttf" id="3_bx86e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qjb5w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gyuou"]
+
+[node name="GameOver" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_2fqhg")
+script = ExtResource("2_yrpwn")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.921569, 0.960784, 0.960784, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="FiredLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_bx86e")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qjb5w")
+text = "FIRED!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FriskLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gyuou")
+text = "Frisks Completed: #"
+
+[node name="ItemLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gyuou")
+text = "Items Confiscated: #"
+
+[node name="IrritateLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gyuou")
+text = "False Alarms: #"
+
+[node name="CasualtyLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gyuou")
+text = "Casualties: #"
+
+[node name="EmployLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gyuou")
+text = "Job: Unknown"
+
+[node name="QuitBtn" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit to Menu"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/QuitBtn" to="." method="_on_quit_btn_pressed"]

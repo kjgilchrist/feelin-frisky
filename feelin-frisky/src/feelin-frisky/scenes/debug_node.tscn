@@ -5,7 +5,8 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1fdgm"]
 
-[node name="DebugNode" type="Node2D"]
+[node name="DebugNode" type="Node2D" groups=["Debug"]]
+visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.0980392)

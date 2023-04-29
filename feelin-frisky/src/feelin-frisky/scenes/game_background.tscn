@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://blywf6ixdc816"]
+[gd_scene load_steps=14 format=3 uid="uid://blywf6ixdc816"]
 
 [ext_resource type="Theme" uid="uid://d1kneybg6tu5b" path="res://src/feelin-frisky/ui/game_theme.tres" id="1_gkiio"]
+[ext_resource type="Script" path="res://src/feelin-frisky/scripts/game_background.gd" id="2_0xcqj"]
 [ext_resource type="PackedScene" uid="uid://bl3lo0auux8xg" path="res://src/feelin-frisky/scenes/item_location.tscn" id="2_1j6b5"]
 [ext_resource type="Texture2D" uid="uid://dtfpr5h2lmdat" path="res://src/feelin-frisky/art/figure_front.png" id="2_3fgy8"]
 [ext_resource type="Texture2D" uid="uid://deub5uwul4kqu" path="res://src/feelin-frisky/art/figure_back.png" id="4_7fu7x"]
@@ -33,6 +34,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_gkiio")
+script = ExtResource("2_0xcqj")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1

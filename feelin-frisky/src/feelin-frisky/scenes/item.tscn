@@ -4,5 +4,4 @@
 
 [node name="ItemImage" type="Sprite2D" groups=["Items"]]
 self_modulate = Color(0, 0, 0, 1)
-z_index = 1
 script = ExtResource("2_hmid8")

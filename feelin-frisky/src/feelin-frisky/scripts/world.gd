@@ -2,7 +2,8 @@ extends Node2D
 
 @onready var item_scene = load("res://src/feelin-frisky/scenes/item.tscn")
 @onready var main_menu= $GUI/MainMenu
-@onready var pause_menu = get_tree().get_root().get_node("World/GUI/PauseMenu")
+@onready var game_background = $GUI/GameBackground
+@onready var pause_menu = $GUI/PauseMenu
 @onready var scan_timer = $ScanTimer
 @onready var SpawnLocations = get_tree().get_nodes_in_group("SpawnLocations")
 @onready var timer_bar = get_tree().get_root().get_node("World/GUI/GameBackground/Center/MainGrid/TimerContainer/TimerVisual")
@@ -20,8 +21,6 @@ func _ready():
 	pause_menu.connect("quit_game", _on_quit_to_menu)
 	num_items = 5
 	scan_timer.wait_time = 20
-	for debug in get_tree().get_nodes_in_group("Debug"):
-		debug.visible = true
 
 
 func _process(_delta):
@@ -41,6 +40,14 @@ func _process(_delta):
 	if scan_timer.time_left > 0 and get_tree().get_nodes_in_group("Items").size() <= 0:
 		scan_timer.stop()
 		scan_timer.emit_signal("timeout")
+	# Show debug if needed.
+	if Input.is_action_just_pressed("show_debug"):
+		var all_debug = get_tree().get_nodes_in_group("Debug")
+		for node in all_debug:
+			if node.visible:
+				node.visible = false
+			else:
+				node.visible = true
 
 
 func _on_game_start():

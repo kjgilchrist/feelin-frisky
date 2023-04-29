@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://sxw3wekysiad" path="res://src/feelin-frisky/scenes/main_menu.tscn" id="1_skvb4"]
 [ext_resource type="PackedScene" uid="uid://cfva8524bo3ni" path="res://src/feelin-frisky/scenes/fps_label.tscn" id="3_g03pe"]
 [ext_resource type="PackedScene" uid="uid://blywf6ixdc816" path="res://src/feelin-frisky/scenes/game_background.tscn" id="4_qvui6"]
-[ext_resource type="Script" path="res://src/feelin-frisky/scripts/game_background.gd" id="4_w5so3"]
+[ext_resource type="PackedScene" uid="uid://1rf1jy3d4g3l" path="res://src/feelin-frisky/scenes/game_over.tscn" id="6_eovdt"]
 
 [node name="GUI" type="CanvasLayer"]
 
@@ -12,8 +12,12 @@
 
 [node name="GameBackground" parent="." instance=ExtResource("4_qvui6")]
 visible = false
-script = ExtResource("4_w5so3")
 
 [node name="PauseMenu" parent="." instance=ExtResource("1_06gu5")]
 
+[node name="GameOver" parent="." instance=ExtResource("6_eovdt")]
+visible = false
+
 [node name="FPSLabel" parent="." instance=ExtResource("3_g03pe")]
+offset_right = 100.0
+offset_bottom = 26.0
