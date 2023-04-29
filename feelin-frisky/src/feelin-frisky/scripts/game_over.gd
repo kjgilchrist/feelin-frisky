@@ -26,13 +26,13 @@ func _set_is_paused(value):
 	is_paused = value
 	get_tree().paused = is_paused
 	visible = is_paused
-	
+
 
 func _get_is_paused():
 	return is_paused
 
 
-func _on_quit_btn_pressed():
+func _on_quit_menu_btn_pressed():
 	emit_signal("quit_game_over")
 	visible = false
 	self.is_paused = false
