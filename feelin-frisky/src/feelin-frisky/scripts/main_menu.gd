@@ -8,7 +8,7 @@ signal game_start
 
 func _ready():
 	pause_menu.connect("quit_game", _on_quit_to_menu)
-	game_over_menu.connect("quit_game_over", _on_quit_to_menu_go)
+	#game_over_menu.connect("quit_game_over", _on_quit_to_menu_go)
 
 func _on_quit_btn_pressed():
 	get_tree().get_root().propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)

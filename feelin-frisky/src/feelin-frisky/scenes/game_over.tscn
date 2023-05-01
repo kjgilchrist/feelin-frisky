@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://1rf1jy3d4g3l"]
+[gd_scene load_steps=5 format=3 uid="uid://1rf1jy3d4g3l"]
 
 [ext_resource type="Theme" uid="uid://d1kneybg6tu5b" path="res://src/feelin-frisky/ui/game_theme.tres" id="1_2fqhg"]
-[ext_resource type="Script" path="res://src/feelin-frisky/scripts/game_over.gd" id="2_yrpwn"]
 [ext_resource type="FontFile" uid="uid://cjxok62tpowyl" path="res://src/feelin-frisky/fonts/IBMPlexMono-BoldItalic.ttf" id="3_bx86e"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qjb5w"]
@@ -17,7 +16,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_2fqhg")
-script = ExtResource("2_yrpwn")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -83,5 +81,3 @@ text = "Job: Unknown"
 [node name="QuitMenuBtn" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit to Menu"
-
-[connection signal="pressed" from="CenterContainer/VBoxContainer/QuitMenuBtn" to="." method="_on_quit_menu_btn_pressed"]

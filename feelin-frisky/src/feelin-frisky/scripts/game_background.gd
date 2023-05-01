@@ -54,8 +54,9 @@ func _on_game_start():
 
 
 func _process(_delta):
-	if casualties > 20:
-		emit_signal("game_over", frisks, items, irritations, casualties, job_status)
+	pass
+	#if casualties > 20:
+		#emit_signal("game_over", frisks, items, irritations, casualties, job_status)
 
 
 func _on_update_scanning(scanning):
