@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dpvu537p78c6w"]
 
-[ext_resource type="Theme" uid="uid://d1kneybg6tu5b" path="res://src/feelin-frisky/ui/game_theme.tres" id="1_3vqc7"]
+[ext_resource type="Theme" uid="uid://jcnxx8156t3p" path="res://src/feelin-frisky/ui/game_theme.tres" id="1_3vqc7"]
 [ext_resource type="Script" path="res://src/feelin-frisky/scripts/pause_menu.gd" id="1_n82xb"]
 [ext_resource type="PackedScene" uid="uid://cqqvojdju6nah" path="res://src/feelin-frisky/scenes/settings_menu.tscn" id="2_yr55i"]
 [ext_resource type="PackedScene" uid="uid://ca605oyr3rguu" path="res://src/feelin-frisky/ui/how_to.tscn" id="4_jnbhu"]
@@ -26,7 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.509804)
+color = Color(0, 0, 0, 0.72549)
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -41,6 +41,7 @@ layout_mode = 2
 
 [node name="PauseLabel" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_qjb5w")
 text = "Paused"
 horizontal_alignment = 1

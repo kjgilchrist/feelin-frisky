@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ca605oyr3rguu"]
+[gd_scene load_steps=5 format=3 uid="uid://ca605oyr3rguu"]
 
-[ext_resource type="Theme" uid="uid://d1kneybg6tu5b" path="res://src/feelin-frisky/ui/game_theme.tres" id="1_n4wik"]
+[ext_resource type="Theme" uid="uid://jcnxx8156t3p" path="res://src/feelin-frisky/ui/game_theme.tres" id="1_n4wik"]
 [ext_resource type="Script" path="res://src/feelin-frisky/scripts/how_to.gd" id="2_eyqj6"]
+[ext_resource type="StyleBox" uid="uid://c686efxkbo5di" path="res://src/feelin-frisky/ui/theme_window_style_box_flat.tres" id="2_xcq8r"]
 [ext_resource type="Texture2D" uid="uid://diw61uitx0m1f" path="res://src/feelin-frisky/art/kenney_prototype_textures/red/texture_01.png" id="3_s7r3o"]
 
 [node name="HowToPlay" type="Window"]
@@ -10,6 +11,7 @@ title = "How to Play"
 size = Vector2i(700, 650)
 visible = false
 theme = ExtResource("1_n4wik")
+theme_override_styles/embedded_border = ExtResource("2_xcq8r")
 script = ExtResource("2_eyqj6")
 
 [node name="Background" type="ColorRect" parent="."]

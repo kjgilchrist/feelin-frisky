@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://sxw3wekysiad"]
+[gd_scene load_steps=7 format=3 uid="uid://sxw3wekysiad"]
 
 [ext_resource type="Script" path="res://src/feelin-frisky/scripts/main_menu.gd" id="1_dotrf"]
-[ext_resource type="Theme" uid="uid://d1kneybg6tu5b" path="res://src/feelin-frisky/ui/game_theme.tres" id="1_x5el3"]
+[ext_resource type="Theme" uid="uid://jcnxx8156t3p" path="res://src/feelin-frisky/ui/game_theme.tres" id="1_x5el3"]
 [ext_resource type="PackedScene" uid="uid://cqqvojdju6nah" path="res://src/feelin-frisky/scenes/settings_menu.tscn" id="2_gibed"]
+[ext_resource type="FontFile" uid="uid://58x1ukrukayu" path="res://src/feelin-frisky/fonts/sysfont.otf" id="3_2w6u4"]
 [ext_resource type="PackedScene" uid="uid://ca605oyr3rguu" path="res://src/feelin-frisky/ui/how_to.tscn" id="4_4akau"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hxqqu"]
@@ -41,6 +42,7 @@ layout_mode = 2
 [node name="TitleLabel" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_2w6u4")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_hxqqu")
 text = "Feelin' Frisky"
 horizontal_alignment = 1

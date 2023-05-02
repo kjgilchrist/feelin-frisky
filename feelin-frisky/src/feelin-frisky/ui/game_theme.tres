@@ -1,19 +1,30 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://d1kneybg6tu5b"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://jcnxx8156t3p"]
 
 [ext_resource type="StyleBox" uid="uid://cdklo47oydnio" path="res://src/feelin-frisky/ui/theme_hover_style_box_flat.tres" id="1_3ox61"]
-[ext_resource type="FontFile" uid="uid://cqcwcy7r8gn43" path="res://src/feelin-frisky/fonts/IBMPlexMono-Regular.ttf" id="1_itqoc"]
+[ext_resource type="FontFile" uid="uid://c2gyxmmhy1gfx" path="res://src/feelin-frisky/fonts/W95FA.otf" id="1_h27ty"]
 [ext_resource type="StyleBox" uid="uid://bfr6gxitbbe4p" path="res://src/feelin-frisky/ui/theme_focus_style_box_flat.tres" id="1_xs388"]
-[ext_resource type="StyleBox" uid="uid://dkxnfbinfw2x2" path="res://src/feelin-frisky/ui/theme_style_box_flat.tres" id="2_ae1nw"]
 [ext_resource type="StyleBox" uid="uid://dv81biclrsdmv" path="res://src/feelin-frisky/ui/theme_pressed_style_box_flat.tres" id="3_6hg8v"]
+[ext_resource type="StyleBox" uid="uid://c3sdg73l2g05f" path="res://src/feelin-frisky/ui/theme_button_style_box_flat.tres" id="4_1fuex"]
+[ext_resource type="FontFile" uid="uid://58x1ukrukayu" path="res://src/feelin-frisky/fonts/sysfont.otf" id="6_hesdy"]
+[ext_resource type="StyleBox" uid="uid://dkxnfbinfw2x2" path="res://src/feelin-frisky/ui/theme_label_style_box_flat.tres" id="6_n2l6s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_poefd"]
+bg_color = Color(0, 0, 0.490196, 1)
 
 [resource]
-default_font = ExtResource("1_itqoc")
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_focus_color = Color(0.588235, 0.588235, 0.588235, 1)
 Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/font_sizes/font_size = 18
+Button/fonts/font = ExtResource("1_h27ty")
 Button/styles/focus = ExtResource("1_xs388")
 Button/styles/hover = ExtResource("1_3ox61")
-Button/styles/normal = ExtResource("2_ae1nw")
+Button/styles/normal = ExtResource("4_1fuex")
 Button/styles/pressed = ExtResource("3_6hg8v")
 Label/colors/font_color = Color(0, 0, 0, 1)
-Label/styles/normal = ExtResource("2_ae1nw")
+Label/font_sizes/font_size = 18
+Label/fonts/font = ExtResource("1_h27ty")
+Label/styles/normal = ExtResource("6_n2l6s")
+Window/font_sizes/title_font_size = 18
+Window/fonts/title_font = ExtResource("6_hesdy")
+Window/styles/embedded_border = SubResource("StyleBoxFlat_poefd")
