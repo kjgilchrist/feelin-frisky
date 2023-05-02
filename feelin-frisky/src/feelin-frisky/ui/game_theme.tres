@@ -1,14 +1,19 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://d1kneybg6tu5b"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://d1kneybg6tu5b"]
 
 [ext_resource type="StyleBox" uid="uid://cdklo47oydnio" path="res://src/feelin-frisky/ui/theme_hover_style_box_flat.tres" id="1_3ox61"]
 [ext_resource type="FontFile" uid="uid://cqcwcy7r8gn43" path="res://src/feelin-frisky/fonts/IBMPlexMono-Regular.ttf" id="1_itqoc"]
+[ext_resource type="StyleBox" uid="uid://bfr6gxitbbe4p" path="res://src/feelin-frisky/ui/theme_focus_style_box_flat.tres" id="1_xs388"]
 [ext_resource type="StyleBox" uid="uid://dkxnfbinfw2x2" path="res://src/feelin-frisky/ui/theme_style_box_flat.tres" id="2_ae1nw"]
 [ext_resource type="StyleBox" uid="uid://dv81biclrsdmv" path="res://src/feelin-frisky/ui/theme_pressed_style_box_flat.tres" id="3_6hg8v"]
 
 [resource]
 default_font = ExtResource("1_itqoc")
 Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0.588235, 0.588235, 0.588235, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/styles/focus = ExtResource("1_xs388")
 Button/styles/hover = ExtResource("1_3ox61")
 Button/styles/normal = ExtResource("2_ae1nw")
 Button/styles/pressed = ExtResource("3_6hg8v")
+Label/colors/font_color = Color(0, 0, 0, 1)
 Label/styles/normal = ExtResource("2_ae1nw")
