@@ -24,6 +24,7 @@ one_shot = true
 [node name="AmbientMusic" parent="." instance=ExtResource("4_reuw4")]
 
 [node name="TickingSound" parent="." instance=ExtResource("5_8y06g")]
+volume_db = -5.0
 
 [node name="Buzz" parent="." instance=ExtResource("6_m8fa4")]
 stream = ExtResource("7_cbid6")
