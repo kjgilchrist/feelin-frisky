@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjcgasxtn7k4b"]
+
+[ext_resource type="AudioStream" uid="uid://cpxiwhrnupvon" path="res://src/feelin-frisky/audio/ticking_sound.mp3" id="1_vwsxs"]
+
+[node name="TickingSound" type="AudioStreamPlayer"]
+stream = ExtResource("1_vwsxs")
+bus = &"SFX"

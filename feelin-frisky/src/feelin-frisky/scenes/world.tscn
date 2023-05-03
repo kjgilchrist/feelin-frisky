@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2ty4ew1cw6or"]
+[gd_scene load_steps=10 format=3 uid="uid://b2ty4ew1cw6or"]
 
 [ext_resource type="PackedScene" uid="uid://0kuembofp0lm" path="res://src/feelin-frisky/ui/gui.tscn" id="1_o37jt"]
 [ext_resource type="Script" path="res://src/feelin-frisky/scripts/world.gd" id="1_x70vh"]
 [ext_resource type="PackedScene" uid="uid://ftmc72w5pu2v" path="res://src/feelin-frisky/scenes/world_environment.tscn" id="2_injbn"]
+[ext_resource type="PackedScene" uid="uid://b7t1o3psnbtf3" path="res://src/feelin-frisky/audio/ambient_music.tscn" id="4_reuw4"]
+[ext_resource type="PackedScene" uid="uid://bjcgasxtn7k4b" path="res://src/feelin-frisky/audio/ticking_sound.tscn" id="5_8y06g"]
+[ext_resource type="PackedScene" uid="uid://b8wcwtypdkp4e" path="res://src/feelin-frisky/audio/buzz.tscn" id="6_m8fa4"]
+[ext_resource type="AudioStream" uid="uid://bg6i2v71xcvl0" path="res://src/feelin-frisky/audio/buzz.mp3" id="7_cbid6"]
+[ext_resource type="PackedScene" uid="uid://ddsytihnhcr8c" path="res://src/feelin-frisky/audio/gasp.tscn" id="8_xitbj"]
+[ext_resource type="AudioStream" uid="uid://b5qr13oqv6cuu" path="res://src/feelin-frisky/audio/gasp.mp3" id="9_sojql"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_x70vh")
@@ -14,5 +20,15 @@ script = ExtResource("1_x70vh")
 [node name="ScanTimer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
+
+[node name="AmbientMusic" parent="." instance=ExtResource("4_reuw4")]
+
+[node name="TickingSound" parent="." instance=ExtResource("5_8y06g")]
+
+[node name="Buzz" parent="." instance=ExtResource("6_m8fa4")]
+stream = ExtResource("7_cbid6")
+
+[node name="Gasp" parent="." instance=ExtResource("8_xitbj")]
+stream = ExtResource("9_sojql")
 
 [connection signal="timeout" from="ScanTimer" to="." method="_on_scan_timer_timeout"]

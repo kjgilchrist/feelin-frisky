@@ -27,6 +27,7 @@ func _process(_delta):
 	# If Enter/Neck Button is pressed and the timer isn't going.
 	if Input.is_action_just_pressed("start_scan") and scan_timer.time_left == 0:
 		scan_timer.start()
+		$TickingSound.play()
 		_spawn_items()
 		emit_signal("update_scanning", true)
 	elif Input.is_action_just_pressed("start_scan") and scan_timer.time_left > 0:
@@ -79,6 +80,7 @@ func _update_timer_bar():
 
 
 func _on_scan_timer_timeout():
+	$TickingSound.stop()
 	# Regardless of outcome, the frisk is over. Increase frisks.
 	emit_signal("update_frisks", 1)
 	emit_signal("update_scanning", false)

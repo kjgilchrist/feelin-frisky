@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7t1o3psnbtf3"]
+
+[ext_resource type="AudioStream" uid="uid://4kygbct3ii5e" path="res://src/feelin-frisky/audio/retro_groove.mp3" id="1_7t242"]
+
+[node name="AmbientMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_7t242")
+autoplay = true
+bus = &"Music"

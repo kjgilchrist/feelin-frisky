@@ -22,6 +22,10 @@ buses/default_bus_layout="res://src/feelin-frisky/audio/default_bus_layout.tres"
 [autoload]
 
 GlobalSettings="*res://src/feelin-frisky/scripts/global_settings.gd"
+AmbientMusic="*res://src/feelin-frisky/audio/ambient_music.tscn"
+TickingSound="*res://src/feelin-frisky/audio/ticking_sound.tscn"
+Buzz="*res://src/feelin-frisky/audio/buzz.tscn"
+Gasp="*res://src/feelin-frisky/audio/gasp.tscn"
 
 [display]
 

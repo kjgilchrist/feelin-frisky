@@ -229,13 +229,6 @@ key_press = "_7"
 front = true
 left = true
 
-[node name="ItemLocation10" parent="Center/MainGrid/FrontFigure/FrontLocations" instance=ExtResource("2_1j6b5")]
-position = Vector2(164, 425)
-node_name = "Left_Foot"
-key_press = "_0"
-front = true
-left = true
-
 [node name="FrontDebug" type="AspectRatioContainer" parent="Center/MainGrid/FrontFigure"]
 layout_mode = 1
 anchors_preset = 15

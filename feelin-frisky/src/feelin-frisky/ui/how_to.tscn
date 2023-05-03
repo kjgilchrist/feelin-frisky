@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ca605oyr3rguu"]
+[gd_scene load_steps=6 format=3 uid="uid://ca605oyr3rguu"]
 
 [ext_resource type="Theme" uid="uid://jcnxx8156t3p" path="res://src/feelin-frisky/ui/game_theme.tres" id="1_n4wik"]
 [ext_resource type="Script" path="res://src/feelin-frisky/scripts/how_to.gd" id="2_eyqj6"]
 [ext_resource type="StyleBox" uid="uid://c686efxkbo5di" path="res://src/feelin-frisky/ui/theme_window_style_box_flat.tres" id="2_xcq8r"]
-[ext_resource type="Texture2D" uid="uid://diw61uitx0m1f" path="res://src/feelin-frisky/art/kenney_prototype_textures/red/texture_01.png" id="3_s7r3o"]
+[ext_resource type="Texture2D" uid="uid://db8qlsvu4tg62" path="res://src/feelin-frisky/art/screen_pic.jpg" id="4_8u1ks"]
+[ext_resource type="Texture2D" uid="uid://dg68i4aggan47" path="res://src/feelin-frisky/art/glove_pic.jpg" id="5_klirr"]
 
 [node name="HowToPlay" type="Window"]
 initial_position = 1
@@ -78,14 +79,16 @@ autowrap_mode = 3
 [node name="ScreenImage" type="TextureRect" parent="Center/Vertical/Center/PlayerInstructions"]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-texture = ExtResource("3_s7r3o")
+texture = ExtResource("4_8u1ks")
 expand_mode = 1
+stretch_mode = 5
 
 [node name="GlovesImage" type="TextureRect" parent="Center/Vertical/Center/PlayerInstructions"]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-texture = ExtResource("3_s7r3o")
+texture = ExtResource("5_klirr")
 expand_mode = 1
+stretch_mode = 5
 
 [node name="GlovesLabel" type="Label" parent="Center/Vertical/Center/PlayerInstructions"]
 custom_minimum_size = Vector2(300, 0)
