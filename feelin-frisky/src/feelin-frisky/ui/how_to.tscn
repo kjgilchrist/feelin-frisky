@@ -70,7 +70,7 @@ columns = 2
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "PLAYER ONE: Observe the scanner screen, identify dangerous objects and communicate locations on the body. Keep it moving, people!"
+text = "PLAYER ONE: Start and observe the scanner, identify dangerous objects and communicate locations on the body. Keep it moving, people!"
 horizontal_alignment = 2
 vertical_alignment = 1
 autowrap_mode = 3
@@ -91,7 +91,7 @@ expand_mode = 1
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "PLAYER TWO: Start the scanner, wear PPE (red gloves), and  frisk the traveller to remove dangerous objects found by the scanner."
+text = "PLAYER TWO: Wear the correct PPE (red gloves) and  frisk the traveller to remove dangerous objects found by the scanner. Remember: It's your job."
 vertical_alignment = 1
 autowrap_mode = 3
 

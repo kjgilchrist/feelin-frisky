@@ -61,9 +61,9 @@ func _process(_delta):
 
 func _on_update_scanning(scanning):
 	if scanning:
-		scan_label.text = "Scanning... Press to end."
+		scan_label.text = "Scanning... ENTER to end."
 	else:
-		scan_label.text = "Press neck to begin scan."
+		scan_label.text = "Press ENTER to begin scan."
 
 
 func _on_update_frisks(value):

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://1rf1jy3d4g3l"]
 
-[ext_resource type="Theme" uid="uid://d1kneybg6tu5b" path="res://src/feelin-frisky/ui/game_theme.tres" id="1_2fqhg"]
+[ext_resource type="Theme" uid="uid://jcnxx8156t3p" path="res://src/feelin-frisky/ui/game_theme.tres" id="1_2fqhg"]
 [ext_resource type="FontFile" uid="uid://cjxok62tpowyl" path="res://src/feelin-frisky/fonts/IBMPlexMono-BoldItalic.ttf" id="3_bx86e"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qjb5w"]
