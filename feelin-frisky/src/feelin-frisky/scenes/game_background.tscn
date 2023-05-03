@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://blywf6ixdc816"]
+[gd_scene load_steps=15 format=3 uid="uid://blywf6ixdc816"]
 
 [ext_resource type="Theme" uid="uid://jcnxx8156t3p" path="res://src/feelin-frisky/ui/game_theme.tres" id="1_gkiio"]
 [ext_resource type="Script" path="res://src/feelin-frisky/scripts/game_background.gd" id="2_0xcqj"]
@@ -7,6 +7,7 @@
 [ext_resource type="StyleBox" uid="uid://bkbv3y075n23s" path="res://src/feelin-frisky/ui/theme_title_style_box_flat.tres" id="3_aykh5"]
 [ext_resource type="Texture2D" uid="uid://deub5uwul4kqu" path="res://src/feelin-frisky/art/figure_back.png" id="4_7fu7x"]
 [ext_resource type="Texture2D" uid="uid://dlkudvyxjdqd1" path="res://src/feelin-frisky/art/clock.png" id="5_6ly70"]
+[ext_resource type="FontFile" uid="uid://58x1ukrukayu" path="res://src/feelin-frisky/fonts/sysfont.otf" id="8_37vl8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nrdvw"]
 
@@ -318,10 +319,12 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_jhbf2")
 text = "Scanner needs repairs."
 
-[node name="BackFiller" type="Label" parent="Center/MainGrid"]
+[node name="ScoreLabel" type="Label" parent="Center/MainGrid"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("8_37vl8")
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxEmpty_84p3b")
+text = "SCORE: #"
 horizontal_alignment = 1
 vertical_alignment = 1
 

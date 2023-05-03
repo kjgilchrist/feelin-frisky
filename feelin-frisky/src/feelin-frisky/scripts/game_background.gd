@@ -14,11 +14,16 @@ extends Control
 @onready var casualty_label = $Center/MainGrid/Center/TextGrid/CasualtyLabel
 @onready var employ_label = $Center/MainGrid/Center/TextGrid/EmployLabel
 @onready var scan_label = $Center/MainGrid/ScanLabel
+@onready var score_label = $Center/MainGrid/ScoreLabel
 var frisks = 0
 var items = 0
 var irritations = 0
 var casualties = 0
 var job_status = "Reset"
+var score = 0
+var FRISK_VALUE = 1
+var ITEM_VALUE = 100
+var FALSE_VALUE = 10
 signal game_over(value1, value2, value3, value4, string)
 
 func _ready():
@@ -45,12 +50,14 @@ func _on_game_start():
 	items = 0
 	irritations = 0
 	casualties = 0
+	score = 0
 	job_status = "Probationary"
 	_on_update_scanning(false)
 	_on_update_frisks(frisks)
 	_on_update_items(items)
 	_on_update_irritations(irritations)
 	_on_update_casualties(casualties)
+	_update_score(score)
 
 
 func _process(_delta):
@@ -70,11 +77,15 @@ func _on_update_frisks(value):
 	frisks += value
 	frisk_label.text = "Frisks Completed: %s" % frisks
 	_update_job()
+	if value > 0:
+		_update_score(FRISK_VALUE)
 
 
 func _on_update_items(value):
 	items += value
 	item_label.text = "Items Confiscated: %s" % items
+	if value > 0:
+		_update_score(ITEM_VALUE)
 
 
 func _on_update_found(string):
@@ -84,11 +95,15 @@ func _on_update_found(string):
 func _on_update_irritations(value):
 	irritations += value
 	irritate_label.text = "False Alarms: %s" % irritations
+	if value > 0:
+		_update_score(-FALSE_VALUE)
 
 
 func _on_update_casualties(value):
 	casualties += value
 	casualty_label.text = "Casualties: %s" % casualties
+	if value > 0:
+		_update_score(-ITEM_VALUE)
 
 
 func _update_job():
@@ -113,11 +128,18 @@ func _update_job():
 				job_status = "What is Going On"
 		elif casualties > 5 and casualties < 10:
 			job_status = "Probably Fired"
-		elif casualties > 10:
+		elif casualties > 10 and casualties < 20:
 			job_status = "Under Investigation"
+		elif casualties > 20:
+			job_status = "FIRED"
 	else:
 		job_status = "Probationary"
 	employ_label.text = "Job: %s" % job_status
+
+
+func _update_score(value):
+	score += value
+	score_label.text = "SCORE: %s" % score
 
 
 func _on_quit_to_menu():

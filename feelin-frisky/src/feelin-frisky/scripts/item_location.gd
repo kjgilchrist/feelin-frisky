@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var buzz = get_tree().get_root().get_node("World/Buzz")
-@onready var gasp = get_tree().get_root().get_node("World/Gasp")
+@onready var chime = get_tree().get_root().get_node("World/Chime")
 @export var node_name : String
 @export var key_press : String
 signal update_items(value)
@@ -25,11 +25,11 @@ func _input(event):
 			emit_signal("update_found", item_name)
 			# Check if child is "Deadly"
 			if get_child(0).is_deadly:
-				buzz.play()
+				chime.play()
 				# If "Deadly" then ++ "Items Confiscated" - emit signal!
 				emit_signal("update_items", 1)
 			else:
-				gasp.play()
+				buzz.play()
 				# Play irritated noise?
 				emit_signal("update_irritations", 1)
 			# Remove item when found, regardless of deadly status.
