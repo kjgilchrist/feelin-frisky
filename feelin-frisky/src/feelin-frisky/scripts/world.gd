@@ -20,7 +20,7 @@ func _ready():
 	main_menu.connect("game_start", _on_game_start)
 	pause_menu.connect("quit_game", _on_quit_to_menu)
 	num_items = 5
-	scan_timer.wait_time = 20
+	scan_timer.wait_time = 30
 
 
 func _process(_delta):
@@ -107,4 +107,4 @@ func _on_quit_to_menu():
 		scan_timer.stop()
 		scan_timer.emit_signal("timeout")
 	num_items = 5
-	scan_timer.wait_time = 20
+	scan_timer.wait_time = 30

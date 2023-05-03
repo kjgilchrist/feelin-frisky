@@ -256,13 +256,13 @@ grow_vertical = 2
 position = Vector2(127, 140)
 node_name = "Left_Armpit"
 key_press = "_q"
-right = true
+left = true
 
 [node name="ItemLocation2" parent="Center/MainGrid/BackFigure/BackLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(134, 215)
 node_name = "Left_Butt"
 key_press = "_e"
-right = true
+left = true
 
 [node name="ItemLocation3" parent="Center/MainGrid/BackFigure/BackLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(135, 272)
@@ -274,19 +274,19 @@ right = true
 position = Vector2(174, 140)
 node_name = "Right_Armpit"
 key_press = "_w"
-left = true
+right = true
 
 [node name="ItemLocation5" parent="Center/MainGrid/BackFigure/BackLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(167, 215)
 node_name = "Right_Butt"
 key_press = "_r"
-left = true
+right = true
 
 [node name="ItemLocation6" parent="Center/MainGrid/BackFigure/BackLocations" instance=ExtResource("2_1j6b5")]
 position = Vector2(166, 272)
 node_name = "Right_Thigh"
 key_press = "_y"
-left = true
+right = true
 
 [node name="BackDebug" type="AspectRatioContainer" parent="Center/MainGrid/BackFigure"]
 layout_mode = 1

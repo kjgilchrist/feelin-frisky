@@ -1,8 +1,8 @@
 // The threshold bounds for the Hall Sensors.
-int UPPER_BOUND = 575;
-int LOWER_BOUND = 425;
+int UPPER_BOUND = 550;
+int LOWER_BOUND = 450;
 // Delay time per loop() for the key presses.
-int DELAY_TIME = 500;
+int DELAY_TIME = 10;
 // Instantiate each int for the sensors.
 int r_pck, r_thg, r_ft, r_ass, l_ass, l_pck, l_thg, tum, l_pec, l_pit, l_farm, r_farm, r_pit, r_pec, dick;
 
@@ -44,7 +44,7 @@ void loop() {
   // Right Foot - A2 - Key: 9
   r_ft = analogRead(A2);
   if (r_ft > UPPER_BOUND || r_ft < LOWER_BOUND) {
-    Keyboard.print("y");
+    Keyboard.print("9");
   }
   // Right Ass - A3 - Key: r
   r_ass = analogRead(A3);
