@@ -78,14 +78,12 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_nrdvw")
 
 [node name="FrontLabel" type="Label" parent="Center/MainGrid"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "FRONT"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BackLabel" type="Label" parent="Center/MainGrid"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "BACK"
 horizontal_alignment = 1
 vertical_alignment = 1
