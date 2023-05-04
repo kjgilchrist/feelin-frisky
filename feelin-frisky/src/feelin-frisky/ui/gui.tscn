@@ -16,7 +16,6 @@ visible = false
 [node name="PauseMenu" parent="." instance=ExtResource("1_06gu5")]
 
 [node name="GameOver" parent="." instance=ExtResource("6_eovdt")]
-visible = false
 
 [node name="FPSLabel" parent="." instance=ExtResource("3_g03pe")]
 offset_right = 100.0

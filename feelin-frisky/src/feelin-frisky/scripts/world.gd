@@ -19,6 +19,7 @@ var num_items
 func _ready():
 	main_menu.connect("game_start", _on_game_start)
 	pause_menu.connect("quit_game", _on_quit_to_menu)
+	game_background.connect("game_over", _on_quit_to_menu_go)
 	num_items = 5
 	scan_timer.wait_time = 30
 
@@ -103,6 +104,14 @@ func _on_scan_timer_timeout():
 
 
 func _on_quit_to_menu():
+	if scan_timer.time_left > 0:
+		scan_timer.stop()
+		scan_timer.emit_signal("timeout")
+	num_items = 5
+	scan_timer.wait_time = 30
+
+
+func _on_quit_to_menu_go(_value):
 	if scan_timer.time_left > 0:
 		scan_timer.stop()
 		scan_timer.emit_signal("timeout")

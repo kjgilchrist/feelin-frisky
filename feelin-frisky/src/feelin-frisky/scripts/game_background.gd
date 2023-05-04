@@ -4,6 +4,7 @@ extends Control
 @onready var world = get_tree().get_root().get_node("World")
 @onready var main_menu = get_tree().get_root().get_node("World/GUI/MainMenu")
 @onready var pause_menu = get_tree().get_root().get_node("World/GUI/PauseMenu")
+@onready var over_menu = get_tree().get_root().get_node("World/GUI/GameOver")
 @onready var spawn_locations = get_tree().get_nodes_in_group("SpawnLocations")
 @onready var front_spawn = $Center/MainGrid/FrontFigure/FrontDebug
 @onready var back_spawn = $Center/MainGrid/BackFigure/BackDebug
@@ -24,7 +25,7 @@ var score = 0
 var FRISK_VALUE = 1
 var ITEM_VALUE = 100
 var FALSE_VALUE = 10
-signal game_over(value1, value2, value3, value4, string)
+signal game_over(value)
 
 func _ready():
 	randomize()
@@ -60,12 +61,6 @@ func _on_game_start():
 	_update_score(score)
 
 
-func _process(_delta):
-	pass
-	#if casualties > 20:
-		#emit_signal("game_over", frisks, items, irritations, casualties, job_status)
-
-
 func _on_update_scanning(scanning):
 	if scanning:
 		scan_label.text = "Scanning... ENTER to end."
@@ -76,9 +71,9 @@ func _on_update_scanning(scanning):
 func _on_update_frisks(value):
 	frisks += value
 	frisk_label.text = "Frisks Completed: %s" % frisks
-	_update_job()
 	if value > 0:
 		_update_score(FRISK_VALUE)
+	_update_job()
 
 
 func _on_update_items(value):
@@ -104,6 +99,10 @@ func _on_update_casualties(value):
 	casualty_label.text = "Casualties: %s" % casualties
 	if value > 0:
 		_update_score(-ITEM_VALUE)
+	if casualties > 20:
+		emit_signal("game_over", score)
+		_on_quit_to_menu()
+		_reset_game()
 
 
 func _update_job():
@@ -159,3 +158,12 @@ func _spawn_debug(spawn):
 		front_spawn.add_child(item)
 	else:
 		back_spawn.add_child(item)
+
+
+func _reset_game():
+	frisks = 0
+	items = 0
+	irritations = 0
+	casualties = 0
+	job_status = "Reset"
+	score = 0
